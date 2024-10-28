@@ -49,7 +49,7 @@
         </ul>
     </header>
     <body class="bodyStyle">
-        <div class="hello">
+        <!-- <div class="hello">
             <h1>
                 Olá, eu sou o João Ferrete!
             </h1>
@@ -57,9 +57,29 @@
                 Sou um estudante de ciência da computação, sou estagiário em Engenharia de Software na 
                 <a href="https://cobli.co" target="_blank">Cobli</a> e competidor em maratonas de programação...
             </p>
+        </div> -->
+
+        <h2 class="hello">
+            Olá. Você é o Mateus?
+        </h2>
+        <div class="button-div">
+            <button class="btn btn-primary" id="yes-button">Sim</button>
+            <button class="btn btn-primary" id="no-button">Não</button>
         </div>
+
 
         <div></div>
 
     </body>
 </html>
+
+<script>
+    document.getElementById("yes-button").addEventListener("click", function() {
+        alert("TE AMO, VIDAAAA! <3");
+    });
+
+    document.getElementById("no-button").addEventListener("click", function() {
+        alert("Então vazaaa! Esse site é só para o Mateus!");
+    });
+
+</script>
