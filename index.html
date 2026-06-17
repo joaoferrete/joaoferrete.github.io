@@ -1,435 +1,759 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description"
-        data-en="João Paulo Souza Ferrete — Software Engineer II & Tech Lead for IoT Video at Cobli. Backend, real-time systems, and competitive programming."
-        data-pt="João Paulo Souza Ferrete — Engenheiro de Software Pleno & Tech Lead de IoT Vídeo na Cobli. Backend, sistemas real-time e programação competitiva."
-        content="João Paulo Souza Ferrete — Software Engineer II & Tech Lead for IoT Video at Cobli." />
+    <meta
+      name="description"
+      data-en="João Paulo Souza Ferrete — Software Engineer II & Tech Lead for IoT Video at Cobli. Backend, real-time systems, and competitive programming."
+      data-pt="João Paulo Souza Ferrete — Engenheiro de Software Pleno & Tech Lead de IoT Vídeo na Cobli. Backend, sistemas real-time e programação competitiva."
+      content="João Paulo Souza Ferrete — Software Engineer II & Tech Lead for IoT Video at Cobli."
+    />
     <title>João Ferrete — Software Engineer & Tech Lead</title>
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://joaoferrete.github.io/" />
-    <meta property="og:title" content="João Ferrete — Software Engineer & Tech Lead" />
-    <meta property="og:description"
-        content="João Paulo Souza Ferrete — Software Engineer II & Tech Lead for IoT Video at Cobli." />
-    <meta property="og:image" content="https://joaoferrete.github.io/assets/logo.png" />
+    <meta
+      property="og:title"
+      content="João Ferrete — Software Engineer & Tech Lead"
+    />
+    <meta
+      property="og:description"
+      content="João Paulo Souza Ferrete — Software Engineer II & Tech Lead for IoT Video at Cobli."
+    />
+    <meta
+      property="og:image"
+      content="https://joaoferrete.github.io/assets/logo.png"
+    />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://joaoferrete.github.io/" />
-    <meta property="twitter:title" content="João Ferrete — Software Engineer & Tech Lead" />
-    <meta property="twitter:description"
-        content="João Paulo Souza Ferrete — Software Engineer II & Tech Lead for IoT Video at Cobli." />
-    <meta property="twitter:image" content="https://joaoferrete.github.io/assets/logo.png" />
+    <meta
+      property="twitter:title"
+      content="João Ferrete — Software Engineer & Tech Lead"
+    />
+    <meta
+      property="twitter:description"
+      content="João Paulo Souza Ferrete — Software Engineer II & Tech Lead for IoT Video at Cobli."
+    />
+    <meta
+      property="twitter:image"
+      content="https://joaoferrete.github.io/assets/logo.png"
+    />
 
     <link rel="icon" href="assets/logo.png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap"
-        rel="stylesheet" />
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      referrerpolicy="no-referrer"
+    />
 
     <link rel="stylesheet" href="style.css" />
-</head>
+  </head>
 
-<body class="theme-glass" id="top">
+  <body class="theme-glass" id="top">
     <!-- ===================== HEADER / NAV ===================== -->
     <header class="site-header">
-        <a class="brand" href="#top" aria-label="João Ferrete — home">
-            <img class="brand__logo" src="assets/icon.png" alt="" width="40" height="40" />
-            <span class="brand__name">joao<span class="brand__accent">ferrete</span></span>
-        </a>
+      <a class="brand" href="#top" aria-label="João Ferrete — home">
+        <img
+          class="brand__logo"
+          src="assets/icon.png"
+          alt=""
+          width="40"
+          height="40"
+        />
+        <span class="brand__name"
+          >joao<span class="brand__accent">ferrete</span></span
+        >
+      </a>
 
-        <nav class="nav" aria-label="Primary">
-            <a href="#about" data-en="About" data-pt="Sobre">About</a>
-            <a href="#skills" data-en="Skills" data-pt="Skills">Skills</a>
-            <a href="#projects" data-en="Projects" data-pt="Projetos">Projects</a>
-            <a href="#experience" data-en="Experience" data-pt="Trajetória">Experience</a>
-            <a href="#contact" data-en="Contact" data-pt="Contato">Contact</a>
-        </nav>
+      <nav class="nav" aria-label="Primary">
+        <a href="#about" data-en="About" data-pt="Sobre">About</a>
+        <a href="#skills" data-en="Skills" data-pt="Skills">Skills</a>
+        <a href="#projects" data-en="Projects" data-pt="Projetos">Projects</a>
+        <a href="#experience" data-en="Experience" data-pt="Trajetória"
+          >Experience</a
+        >
+        <a href="#contact" data-en="Contact" data-pt="Contato">Contact</a>
+      </nav>
 
-        <div class="header-actions">
-            <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language"
-                title="Switch language">
-                <span class="lang-toggle__opt" data-lang="pt">PT</span>
-                <span class="lang-toggle__sep">/</span>
-                <span class="lang-toggle__opt" data-lang="en">EN</span>
-            </button>
-            <a class="btn btn--ghost cv-link" id="cvHeader" href="assets/cv-joao-ferrete-en.pdf" target="_blank"
-                rel="noopener" data-en="CV" data-pt="Currículo">CV</a>
-            <button class="nav-burger" id="navBurger" type="button" aria-label="Open menu" aria-expanded="false">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
+      <div class="header-actions">
+        <button
+          class="lang-toggle"
+          id="langToggle"
+          type="button"
+          aria-label="Switch language"
+          title="Switch language"
+        >
+          <span class="lang-toggle__opt" data-lang="pt">PT</span>
+          <span class="lang-toggle__sep">/</span>
+          <span class="lang-toggle__opt" data-lang="en">EN</span>
+        </button>
+        <a
+          class="btn btn--ghost cv-link"
+          id="cvHeader"
+          href="assets/cv-joao-ferrete-en.pdf"
+          target="_blank"
+          rel="noopener"
+          data-en="CV"
+          data-pt="Currículo"
+          >CV</a
+        >
+        <button
+          class="nav-burger"
+          id="navBurger"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </header>
 
     <!-- Mobile nav drawer -->
     <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
-        <a href="#about" data-en="About" data-pt="Sobre">About</a>
-        <a href="#skills" data-en="Skills" data-pt="Skills">Skills</a>
-        <a href="#projects" data-en="Projects" data-pt="Projetos">Projects</a>
-        <a href="#experience" data-en="Experience" data-pt="Trajetória">Experience</a>
-        <a href="#contact" data-en="Contact" data-pt="Contato">Contact</a>
+      <a href="#about" data-en="About" data-pt="Sobre">About</a>
+      <a href="#skills" data-en="Skills" data-pt="Skills">Skills</a>
+      <a href="#projects" data-en="Projects" data-pt="Projetos">Projects</a>
+      <a href="#experience" data-en="Experience" data-pt="Trajetória"
+        >Experience</a
+      >
+      <a href="#contact" data-en="Contact" data-pt="Contato">Contact</a>
     </nav>
 
     <main>
-        <!-- ===================== HERO ===================== -->
-        <section class="hero" id="hero">
-            <div class="hero__graph" aria-hidden="true">
-                <svg id="graph" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice"></svg>
-            </div>
+      <!-- ===================== HERO ===================== -->
+      <section class="hero" id="hero">
+        <div class="hero__graph" aria-hidden="true">
+          <svg
+            id="graph"
+            viewBox="0 0 600 600"
+            preserveAspectRatio="xMidYMid slice"
+          ></svg>
+        </div>
 
-            <div class="hero__content">
-                <p class="eyebrow" data-en="// São Mateus, ES · Remote" data-pt="// São Mateus, ES · Remoto">// São
-                    Mateus, ES · Remote</p>
+        <div class="hero__content">
+          <p
+            class="eyebrow"
+            data-en="// São Mateus, ES · Remote"
+            data-pt="// São Mateus, ES · Remoto"
+          >
+            // São Mateus, ES · Remote
+          </p>
 
-                <h1 class="hero__name">João Paulo<br />Ferrete</h1>
+          <h1 class="hero__name">João Paulo<br />Ferrete</h1>
 
-                <p class="hero__role" data-en="Software Engineer II &amp; Tech Lead — IoT &amp; Backend @ Cobli"
-                    data-pt="Engenheiro de Software Pleno &amp; Tech Lead — IoT &amp; Backend @ Cobli">
-                    Software Engineer II &amp; Tech Lead — IoT &amp; Backend @ Cobli
-                </p>
+          <p
+            class="hero__role"
+            data-en="Software Engineer II &amp; Tech Lead — IoT &amp; Backend @ Cobli"
+            data-pt="Engenheiro de Software Pleno &amp; Tech Lead — IoT &amp; Backend @ Cobli"
+          >
+            Software Engineer II &amp; Tech Lead — IoT &amp; Backend @ Cobli
+          </p>
 
-                <p class="hero__tagline"
-                    data-en="I turn complex IoT and video-telemetry challenges into efficient, scalable software — and I lead the team that ships it."
-                    data-pt="Transformo desafios complexos de IoT e vídeo telemetria em software eficiente e escalável — e lidero o time que entrega.">
-                    I turn complex IoT and video-telemetry challenges into efficient, scalable software — and I lead the
-                    team that ships it.
-                </p>
+          <p
+            class="hero__tagline"
+            data-en="I turn complex IoT and video-telemetry challenges into efficient, scalable software — and I lead the team that ships it."
+            data-pt="Transformo desafios complexos de IoT e vídeo telemetria em software eficiente e escalável — e lidero o time que entrega."
+          >
+            I turn complex IoT and video-telemetry challenges into efficient,
+            scalable software — and I lead the team that ships it.
+          </p>
 
-                <div class="hero__cta">
-                    <a class="btn btn--solid" href="#contact" data-en="Let's talk &rarr;"
-                        data-pt="Vamos conversar &rarr;">Let's talk &rarr;</a>
-                    <a class="btn btn--ghost cv-link" id="cvHero" href="assets/cv-joao-ferrete-en.pdf" target="_blank"
-                        rel="noopener" data-en="View CV" data-pt="Ver currículo">View CV</a>
-                </div>
-            </div>
-        </section>
+          <div class="hero__cta">
+            <a
+              class="btn btn--solid"
+              href="#contact"
+              data-en="Let's talk &rarr;"
+              data-pt="Vamos conversar &rarr;"
+              >Let's talk &rarr;</a
+            >
+            <a
+              class="btn btn--ghost cv-link"
+              id="cvHero"
+              href="assets/cv-joao-ferrete-en.pdf"
+              target="_blank"
+              rel="noopener"
+              data-en="View CV"
+              data-pt="Ver currículo"
+              >View CV</a
+            >
+          </div>
+        </div>
+      </section>
 
-        <!-- ===================== ABOUT ===================== -->
-        <section class="section" id="about">
-            <div class="section__label"><span class="node-dot"></span>
-                <span data-en="About" data-pt="Sobre">About</span>
-            </div>
-            <div class="about">
-                <div class="about__lead">
-                    <h2 class="section__title" data-en="From intern to Tech Lead of the IoT Video squad."
-                        data-pt="De estagiário a Tech Lead da squad de IoT Vídeo.">
-                        From intern to Tech Lead of the IoT Video squad.
-                    </h2>
-                </div>
-                <div class="about__body">
-                    <p data-en="I'm a <strong>Software Engineer and Tech Lead</strong> for the IoT Video team at Cobli. My journey started as an intern, helping build the Video Telemetry product from its earliest stages. Today I lead the squad's technical direction &mdash; <strong>backend architecture, scalability, mentorship</strong>, and the technical interface with international hardware vendors."
-                        data-pt="Sou <strong>Engenheiro de Software e Tech Lead</strong> do time de IoT Vídeo na Cobli. Minha trajetória começou como estagiário, ajudando a construir o produto de Vídeo Telemetria desde a fase inicial. Hoje lidero tecnicamente a squad &mdash; <strong>arquitetura de backend, escalabilidade, mentoria</strong> e a interface técnica com fornecedores internacionais de hardware.">
-                        I'm a <strong>Software Engineer and Tech Lead</strong> for the IoT Video team at Cobli. My
-                        journey started as an intern, helping build the Video Telemetry product from its earliest
-                        stages. Today I lead the squad's technical direction &mdash; <strong>backend architecture,
-                            scalability, mentorship</strong>, and the technical interface with international hardware
-                        vendors.
-                    </p>
-                    <p data-en="My foundation is <strong>Computer Science at UFES</strong>, with a strong background in algorithms &mdash; <strong>competitive programming (SBC marathons)</strong> and operations research. I've been a teaching assistant for Data Structures and Functional Programming, and I led VI ENCOMP, the largest computing event in northern Espírito Santo."
-                        data-pt="Minha base é a <strong>Ciência da Computação na UFES</strong>, com forte background em algoritmos &mdash; <strong>programação competitiva (Maratonas da SBC)</strong> e pesquisa operacional. Fui monitor de Estrutura de Dados e Programação Funcional, e coordenei o VI ENCOMP, o maior evento de computação do norte capixaba.">
-                        My foundation is <strong>Computer Science at UFES</strong>, with a strong background in
-                        algorithms &mdash; <strong>competitive programming (SBC marathons)</strong> and operations
-                        research. I've been a teaching assistant for Data Structures and Functional Programming, and I
-                        led VI ENCOMP, the largest computing event in northern Espírito Santo.
-                    </p>
-                    <ul class="about__facts">
-                        <li><span class="num">3+</span><span data-en="years at Cobli" data-pt="anos na Cobli">years at
-                                Cobli</span></li>
-                        <li><span class="num">10</span><span data-en="languages shipped to prod"
-                                data-pt="linguagens em produção">languages shipped to prod</span></li>
-                        <li><span class="num">∞</span><span data-en="problems solved"
-                                data-pt="problemas resolvidos">problems solved</span></li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===================== SKILLS ===================== -->
-        <section class="section" id="skills">
-            <div class="section__label"><span class="node-dot"></span>
-                <span data-en="Tech stack" data-pt="Stack técnico">Tech stack</span>
-            </div>
-            <h2 class="section__title" data-en="Tools I reach for." data-pt="Ferramentas que uso.">Tools I reach for.
+      <!-- ===================== ABOUT ===================== -->
+      <section class="section" id="about">
+        <div class="section__label">
+          <span class="node-dot"></span>
+          <span data-en="About" data-pt="Sobre">About</span>
+        </div>
+        <div class="about">
+          <div class="about__lead">
+            <h2
+              class="section__title"
+              data-en="From intern to Tech Lead of the IoT Video squad."
+              data-pt="De estagiário a Tech Lead da squad de IoT Vídeo."
+            >
+              From intern to Tech Lead of the IoT Video squad.
             </h2>
-
-            <div class="skills">
-                <div class="skill-group">
-                    <h3 data-en="Languages" data-pt="Linguagens">Languages</h3>
-                    <ul>
-                        <li>Kotlin</li>
-                        <li><i class="fa-brands fa-java"></i> Java</li>
-                        <li><i class="fa-brands fa-python"></i> Python</li>
-                        <li><i class="fa-brands fa-golang"></i> Go</li>
-                        <li>C++</li>
-                        <li>C</li>
-                        <li>Scala</li>
-                        <li><i class="fa-brands fa-php"></i> PHP</li>
-                        <li>TypeScript</li>
-                        <li><i class="fa-brands fa-js"></i> JavaScript</li>
-                    </ul>
-                </div>
-                <div class="skill-group">
-                    <h3 data-en="Backend &amp; frameworks" data-pt="Backend &amp; frameworks">Backend &amp; frameworks
-                    </h3>
-                    <ul>
-                        <li>Spring Boot</li>
-                        <li>Apache Flink</li>
-                        <li>Laravel</li>
-                        <li data-en="Microservices" data-pt="Microsserviços">Microservices</li>
-                        <li>REST APIs</li>
-                    </ul>
-                </div>
-                <div class="skill-group">
-                    <h3 data-en="Data &amp; infra" data-pt="Dados &amp; infra">Data &amp; infra</h3>
-                    <ul>
-                        <li>SQL</li>
-                        <li data-en="Linux / Embedded" data-pt="Linux / Embarcado">Linux / Embedded</li>
-                        <li>Docker</li>
-                        <li>Git</li>
-                    </ul>
-                </div>
-                <div class="skill-group">
-                    <h3 data-en="Frontend" data-pt="Frontend">Frontend</h3>
-                    <ul>
-                        <li><i class="fa-brands fa-react"></i> React</li>
-                        <li><i class="fa-brands fa-html5"></i> HTML5</li>
-                        <li><i class="fa-brands fa-css3-alt"></i> CSS3</li>
-                    </ul>
-                </div>
-                <div class="skill-group">
-                    <h3 data-en="Domains &amp; strengths" data-pt="Domínios &amp; forças">Domains &amp; strengths</h3>
-                    <ul>
-                        <li>IoT</li>
-                        <li data-en="Video telemetry" data-pt="Vídeo telemetria">Video telemetry</li>
-                        <li data-en="Real-time data" data-pt="Real-time data">Real-time data</li>
-                        <li data-en="Technical leadership" data-pt="Liderança técnica">Technical leadership</li>
-                        <li data-en="Algorithmic thinking" data-pt="Pensamento algorítmico">Algorithmic thinking</li>
-                        <li data-en="Performance optimization" data-pt="Otimização de performance">Performance
-                            optimization</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===================== PROJECTS ===================== -->
-        <section class="section" id="projects">
-            <div class="section__label"><span class="node-dot"></span>
-                <span data-en="Projects" data-pt="Projetos">Projects</span>
-            </div>
-            <h2 class="section__title" data-en="Things I've built." data-pt="Coisas que construí.">Things I've built.
-            </h2>
-
-            <!-- TODO: João — add/remove projects here as you like -->
-            <div class="projects">
-                <a class="card" href="https://golister.app" target="_blank" rel="noopener">
-                    <div class="card__head">
-                        <h3>Go Lister</h3><span class="card__live"><i class="fa-solid fa-circle"></i> <span
-                                data-en="Live" data-pt="No ar">Live</span></span>
-                    </div>
-                    <p data-en="A real-time collaborative party playlist: create a room, share the link or QR code, and let everyone add and vote on songs. Live-syncs YouTube &amp; Spotify, with a TV mode, AI playlists, and a synced queue for the whole room."
-                        data-pt="Uma playlist de festa colaborativa em tempo real: crie uma sala, compartilhe o link ou QR Code e deixe a galera adicionar e votar nas músicas. Sincroniza YouTube e Spotify ao vivo, com Modo TV, playlists por IA e fila sincronizada para a sala toda.">
-                        A real-time collaborative party playlist: create a room, share the link or QR code, and let
-                        everyone add and vote on songs. Live-syncs YouTube &amp; Spotify, with a TV mode, AI playlists,
-                        and a synced queue for the whole room.
-                    </p>
-                    <div class="card__tags"><span data-en="Web app" data-pt="Web app">Web app</span><span
-                            data-en="Real-time" data-pt="Tempo real">Real-time</span><span>YouTube +
-                            Spotify</span><span>AI</span></div>
-                </a>
-
-                <a class="card" href="https://github.com/joaoferrete/lifter" target="_blank" rel="noopener">
-                    <div class="card__head">
-                        <h3>lifter</h3><span class="card__stars"><i class="fa-regular fa-star"></i> 3</span>
-                    </div>
-                    <p data-en="A personal workout coach that integrates with Hevy and Google Fit to plan and track training."
-                        data-pt="Um coach de treino pessoal que integra com Hevy e Google Fit para planejar e acompanhar treinos.">
-                        A personal workout coach that integrates with Hevy and Google Fit to plan and track training.
-                    </p>
-                    <div class="card__tags"><span>Python</span><span>API</span><span>Google Fit</span><span>AI</span>
-                    </div>
-                </a>
-
-                <a class="card" href="https://github.com/joaoferrete/Lighter" target="_blank" rel="noopener">
-                    <div class="card__head">
-                        <h3>Lighter</h3><span class="card__stars"><i class="fa-regular fa-star"></i> 2</span>
-                    </div>
-                    <p data-en="A GNOME extension that improves video-call lighting with adjustable white screen borders."
-                        data-pt="Uma extensão GNOME que melhora a iluminação em videochamadas com bordas brancas ajustáveis na tela.">
-                        A GNOME extension that improves video-call lighting with adjustable white screen borders.
-                    </p>
-                    <div class="card__tags"><span>JavaScript</span><span>GNOME</span><span>GJS</span></div>
-                </a>
-
-                <a class="card" href="https://github.com/joaoferrete/ContainerLoadingProblem-IC" target="_blank"
-                    rel="noopener">
-                    <div class="card__head">
-                        <h3 data-en="Container Loading Problem" data-pt="Container Loading Problem">Container Loading
-                            Problem</h3>
-                    </div>
-                    <p data-en="Scientific-initiation research in combinatorial optimization: heuristics in C++ for a high-complexity packing problem."
-                        data-pt="Pesquisa de iniciação científica em otimização combinatória: heurísticas em C++ para um problema de empacotamento de alta complexidade.">
-                        Scientific-initiation research in combinatorial optimization: heuristics in C++ for a
-                        high-complexity packing problem.
-                    </p>
-                    <div class="card__tags"><span>C++</span><span data-en="Optimization"
-                            data-pt="Otimização">Optimization</span><span data-en="Research"
-                            data-pt="Pesquisa">Research</span></div>
-                </a>
-
-                <a class="card" href="https://github.com/joaoferrete/MarathonAlg" target="_blank" rel="noopener">
-                    <div class="card__head">
-                        <h3>MarathonAlg</h3>
-                    </div>
-                    <p data-en="A curated library of algorithms and data structures for competitive programming contests."
-                        data-pt="Uma biblioteca curada de algoritmos e estruturas de dados para maratonas de programação.">
-                        A curated library of algorithms and data structures for competitive programming contests.
-                    </p>
-                    <div class="card__tags"><span>C++</span><span data-en="Algorithms"
-                            data-pt="Algoritmos">Algorithms</span></div>
-                </a>
-
-                <a class="card" href="https://github.com/joaoferrete/URI" target="_blank" rel="noopener">
-                    <div class="card__head">
-                        <h3>Beecrowd / URI</h3><span class="card__stars"><i class="fa-regular fa-star"></i> 1</span>
-                    </div>
-                    <p data-en="Accepted solutions to problems from the Beecrowd (formerly URI) online judge."
-                        data-pt="Soluções aceitas para problemas do juiz online Beecrowd (antigo URI).">
-                        Accepted solutions to problems from the Beecrowd (formerly URI) online judge.
-                    </p>
-                    <div class="card__tags"><span>C++</span><span data-en="Problem solving" data-pt="Resolução">Problem
-                            solving</span></div>
-                </a>
-            </div>
-
-            <a class="more-link" href="https://github.com/joaoferrete" target="_blank" rel="noopener"
-                data-en="More on GitHub →" data-pt="Mais no GitHub →">More on GitHub →</a>
-        </section>
-
-        <!-- ===================== EXPERIENCE ===================== -->
-        <section class="section" id="experience">
-            <div class="section__label"><span class="node-dot"></span>
-                <span data-en="Experience" data-pt="Trajetória">Experience</span>
-            </div>
-            <h2 class="section__title" data-en="Where I've been." data-pt="Por onde passei.">Where I've been.</h2>
-
-            <ol class="timeline">
-                <li class="timeline__item">
-                    <span class="timeline__date">Feb 2025 — <span data-en="Present"
-                            data-pt="Atual">Present</span></span>
-                    <h3 data-en="Software Engineer II &amp; Tech Lead — IoT Video"
-                        data-pt="Engenheiro de Software Pleno &amp; Tech Lead — IoT Vídeo">Software Engineer II &amp;
-                        Tech Lead — IoT Video</h3>
-                    <p class="timeline__org">Cobli · São Mateus (<span data-en="Remote" data-pt="Remoto">Remote</span>)
-                    </p>
-                    <p data-en="<strong>Tech Lead of the Camera/IoT Video squad:</strong> Architected real-time services for low-latency communication between embedded hardware and backend. Built scalable microservices in Kotlin, Java/Spring Boot, Go, and Python. Led stream processing with Apache Flink. Acted as the technical focal point for international vendors on firmware and hardware homologation."
-                        data-pt="<strong>Tech Lead da squad de Câmera/IoT Vídeo:</strong> Arquitetei serviços real-time para comunicação de baixa latência entre hardware embarcado e backend. Construí microsserviços escaláveis em Kotlin, Java/Spring Boot, Go e Python. Liderei o processamento de streams com Apache Flink. Atuei como ponto focal técnico com fornecedores internacionais para firmware e homologação de hardware.">
-                        <strong>Tech Lead of the Camera/IoT Video squad:</strong> Architected real-time services for
-                        low-latency communication between embedded hardware and backend. Built scalable microservices in
-                        Kotlin, Java/Spring Boot, Go, and Python. Led stream processing with Apache Flink. Acted as the
-                        technical focal point for international vendors on firmware and hardware homologation.
-                    </p>
-                </li>
-                <li class="timeline__item">
-                    <span class="timeline__date">Jan 2024 — Jan 2025</span>
-                    <h3 data-en="Software Engineer I" data-pt="Engenheiro de Software Júnior">Software Engineer I</h3>
-                    <p class="timeline__org">Cobli · São Mateus (<span data-en="Remote" data-pt="Remoto">Remote</span>)
-                    </p>
-                    <p data-en="Built and maintained critical microservices for IoT Video in a polyglot environment. <strong>Engineered data pipelines</strong> with Apache Flink and Scala, ensured high availability for video-ingestion infrastructure, and accelerated internal workflows by developing admin tools with React."
-                        data-pt="Construí e mantive microsserviços críticos de IoT Vídeo em um ambiente poliglota. <strong>Engenhei pipelines de dados</strong> com Apache Flink e Scala, garanti alta disponibilidade para a infraestrutura de ingestão de vídeo e acelerei fluxos internos desenvolvendo ferramentas administrativas com React.">
-                        Built and maintained critical microservices for IoT Video in a polyglot environment.
-                        <strong>Engineered data pipelines</strong> with Apache Flink and Scala, ensured high
-                        availability for video-ingestion infrastructure, and accelerated internal workflows by
-                        developing admin tools with React.
-                    </p>
-                </li>
-                <li class="timeline__item">
-                    <span class="timeline__date">Aug 2022 — Dec 2023</span>
-                    <h3 data-en="Software Engineering &amp; Embedded Systems Intern"
-                        data-pt="Estagiário em Engenharia de Software e Sistemas Embarcados">Software Engineering &amp;
-                        Embedded Systems Intern</h3>
-                    <p class="timeline__org">Cobli · São Mateus (<span data-en="Remote" data-pt="Remoto">Remote</span>)
-                    </p>
-                    <p data-en="Helped create the Video Telemetry product from the ground up — backend (Kotlin, Java, Python, Go, Scala) and frontend (React, TypeScript) — plus R&amp;D for embedded systems and microservices setup."
-                        data-pt="Ajudei a criar o produto de Vídeo Telemetria do zero — backend (Kotlin, Java, Python, Go, Scala) e frontend (React, TypeScript) — além de P&amp;D para sistemas embarcados e configuração de microsserviços.">
-                        Helped create the Video Telemetry product from the ground up — backend (Kotlin, Java, Python,
-                        Go, Scala) and frontend (React, TypeScript) — plus R&amp;D for embedded systems and
-                        microservices setup.
-                    </p>
-                </li>
-                <li class="timeline__item">
-                    <span class="timeline__date">Mar 2022 — Oct 2022</span>
-                    <h3 data-en="Development Manager / Associate" data-pt="Gerente / Assessor de Desenvolvimento">
-                        Development Manager / Associate</h3>
-                    <p class="timeline__org">Adapti Soluções Web · <span data-en="Junior Enterprise"
-                            data-pt="Empresa Júnior">Junior Enterprise</span></p>
-                    <p data-en="Led a development squad and built fullstack web systems for clients with PHP (Laravel), HTML, CSS, and JavaScript."
-                        data-pt="Liderei uma squad de desenvolvimento e construí sistemas web fullstack para clientes com PHP (Laravel), HTML, CSS e JavaScript.">
-                        Led a development squad and built fullstack web systems for clients with PHP (Laravel), HTML,
-                        CSS, and JavaScript.
-                    </p>
-                </li>
-                <li class="timeline__item timeline__item--edu">
-                    <span class="timeline__date">2018 — <span data-en="Exp. Mar 2026" data-pt="Prev. Mar 2026">Exp. Mar
-                            2026</span></span>
-                    <h3 data-en="BSc in Computer Science" data-pt="Bacharelado em Ciência da Computação">BSc in Computer
-                        Science</h3>
-                    <p class="timeline__org">UFES — <span data-en="Federal University of Espírito Santo"
-                            data-pt="Universidade Federal do Espírito Santo">Federal University of Espírito Santo</span>
-                    </p>
-                    <p data-en="Teaching assistant (Data Structures, Functional Programming) · scientific initiation in combinatorial optimization · competitive programming (SBC) · Vice-General Chair of VI ENCOMP."
-                        data-pt="Monitor (Estrutura de Dados, Programação Funcional) · iniciação científica em otimização combinatória · programação competitiva (SBC) · Vice-Coordenador Geral do VI ENCOMP.">
-                        Teaching assistant (Data Structures, Functional Programming) · scientific initiation in
-                        combinatorial optimization · competitive programming (SBC) · Vice-General Chair of VI ENCOMP.
-                    </p>
-                </li>
-            </ol>
-        </section>
-
-        <!-- ===================== CONTACT ===================== -->
-        <section class="section section--contact" id="contact">
-            <div class="section__label"><span class="node-dot"></span>
-                <span data-en="Contact" data-pt="Contato">Contact</span>
-            </div>
-            <h2 class="section__title section__title--big" data-en="Let's build something."
-                data-pt="Vamos construir algo.">Let's build something.</h2>
-            <p class="contact__sub"
-                data-en="Open to interesting backend, IoT, and distributed-systems work. The fastest way to reach me is email."
-                data-pt="Aberto a trabalhos interessantes de backend, IoT e sistemas distribuídos. O jeito mais rápido de me encontrar é por email.">
-                Open to interesting backend, IoT, and distributed-systems work. The fastest way to reach me is email.
+          </div>
+          <div class="about__body">
+            <p
+              data-en="I'm a <strong>Software Engineer and Tech Lead</strong> for the IoT Video team at Cobli. My journey started as an intern, helping build the Video Telemetry product from its earliest stages. Today I lead the squad's technical direction &mdash; <strong>backend architecture, scalability, mentorship</strong>, and the technical interface with international hardware vendors."
+              data-pt="Sou <strong>Engenheiro de Software e Tech Lead</strong> do time de IoT Vídeo na Cobli. Minha trajetória começou como estagiário, ajudando a construir o produto de Vídeo Telemetria desde a fase inicial. Hoje lidero tecnicamente a squad &mdash; <strong>arquitetura de backend, escalabilidade, mentoria</strong> e a interface técnica com fornecedores internacionais de hardware."
+            >
+              I'm a <strong>Software Engineer and Tech Lead</strong> for the IoT
+              Video team at Cobli. My journey started as an intern, helping
+              build the Video Telemetry product from its earliest stages. Today
+              I lead the squad's technical direction &mdash;
+              <strong>backend architecture, scalability, mentorship</strong>,
+              and the technical interface with international hardware vendors.
             </p>
+            <p
+              data-en="My foundation is <strong>Computer Science at UFES</strong>, with a strong background in algorithms &mdash; <strong>competitive programming (SBC marathons)</strong> and operations research. I've been a teaching assistant for Data Structures and Functional Programming, and I led VI ENCOMP, the largest computing event in northern Espírito Santo."
+              data-pt="Minha base é a <strong>Ciência da Computação na UFES</strong>, com forte background em algoritmos &mdash; <strong>programação competitiva (Maratonas da SBC)</strong> e pesquisa operacional. Fui monitor de Estrutura de Dados e Programação Funcional, e coordenei o VI ENCOMP, o maior evento de computação do norte capixaba."
+            >
+              My foundation is <strong>Computer Science at UFES</strong>, with a
+              strong background in algorithms &mdash;
+              <strong>competitive programming (SBC marathons)</strong> and
+              operations research. I've been a teaching assistant for Data
+              Structures and Functional Programming, and I led VI ENCOMP, the
+              largest computing event in northern Espírito Santo.
+            </p>
+            <ul class="about__facts">
+              <li>
+                <span class="num">3+</span
+                ><span data-en="years at Cobli" data-pt="anos na Cobli"
+                  >years at Cobli</span
+                >
+              </li>
+              <li>
+                <span class="num">10</span
+                ><span
+                  data-en="languages shipped to prod"
+                  data-pt="linguagens em produção"
+                  >languages shipped to prod</span
+                >
+              </li>
+              <li>
+                <span class="num">∞</span
+                ><span data-en="problems solved" data-pt="problemas resolvidos"
+                  >problems solved</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-            <div class="contact__links">
-                <a href="mailto:jpferreteg@gmail.com">
-                    <i class="fa-regular fa-envelope"></i><span>jpferreteg@gmail.com</span>
-                </a>
-                <a href="https://github.com/joaoferrete" target="_blank" rel="noopener">
-                    <i class="fa-brands fa-github"></i><span>github.com/joaoferrete</span>
-                </a>
-                <a href="https://www.linkedin.com/in/joaoferrete/" target="_blank" rel="noopener">
-                    <i class="fa-brands fa-linkedin"></i><span>linkedin.com/in/joaoferrete</span>
-                </a>
+      <!-- ===================== SKILLS ===================== -->
+      <section class="section" id="skills">
+        <div class="section__label">
+          <span class="node-dot"></span>
+          <span data-en="Tech stack" data-pt="Stack técnico">Tech stack</span>
+        </div>
+        <h2
+          class="section__title"
+          data-en="Tools I reach for."
+          data-pt="Ferramentas que uso."
+        >
+          Tools I reach for.
+        </h2>
+
+        <div class="skills">
+          <div class="skill-group">
+            <h3 data-en="Languages" data-pt="Linguagens">Languages</h3>
+            <ul>
+              <li>Kotlin</li>
+              <li><i class="fa-brands fa-java"></i> Java</li>
+              <li><i class="fa-brands fa-python"></i> Python</li>
+              <li><i class="fa-brands fa-golang"></i> Go</li>
+              <li>C++</li>
+              <li>C</li>
+              <li>Scala</li>
+              <li><i class="fa-brands fa-php"></i> PHP</li>
+              <li>TypeScript</li>
+              <li><i class="fa-brands fa-js"></i> JavaScript</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3
+              data-en="Backend &amp; frameworks"
+              data-pt="Backend &amp; frameworks"
+            >
+              Backend &amp; frameworks
+            </h3>
+            <ul>
+              <li>Spring Boot</li>
+              <li>Apache Flink</li>
+              <li>Laravel</li>
+              <li data-en="Microservices" data-pt="Microsserviços">
+                Microservices
+              </li>
+              <li>REST APIs</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3 data-en="Data &amp; infra" data-pt="Dados &amp; infra">
+              Data &amp; infra
+            </h3>
+            <ul>
+              <li>SQL</li>
+              <li data-en="Linux / Embedded" data-pt="Linux / Embarcado">
+                Linux / Embedded
+              </li>
+              <li>Docker</li>
+              <li>Git</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3 data-en="Frontend" data-pt="Frontend">Frontend</h3>
+            <ul>
+              <li><i class="fa-brands fa-react"></i> React</li>
+              <li><i class="fa-brands fa-html5"></i> HTML5</li>
+              <li><i class="fa-brands fa-css3-alt"></i> CSS3</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3
+              data-en="Domains &amp; strengths"
+              data-pt="Domínios &amp; forças"
+            >
+              Domains &amp; strengths
+            </h3>
+            <ul>
+              <li>IoT</li>
+              <li data-en="Video telemetry" data-pt="Vídeo telemetria">
+                Video telemetry
+              </li>
+              <li data-en="Real-time data" data-pt="Real-time data">
+                Real-time data
+              </li>
+              <li data-en="Technical leadership" data-pt="Liderança técnica">
+                Technical leadership
+              </li>
+              <li
+                data-en="Algorithmic thinking"
+                data-pt="Pensamento algorítmico"
+              >
+                Algorithmic thinking
+              </li>
+              <li
+                data-en="Performance optimization"
+                data-pt="Otimização de performance"
+              >
+                Performance optimization
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== PROJECTS ===================== -->
+      <section class="section" id="projects">
+        <div class="section__label">
+          <span class="node-dot"></span>
+          <span data-en="Projects" data-pt="Projetos">Projects</span>
+        </div>
+        <h2
+          class="section__title"
+          data-en="Things I've built."
+          data-pt="Coisas que construí."
+        >
+          Things I've built.
+        </h2>
+
+        <!-- TODO: João — add/remove projects here as you like -->
+        <div class="projects">
+          <a
+            class="card"
+            href="https://golister.app"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="card__head">
+              <h3>Go Lister</h3>
+              <span class="card__live"
+                ><i class="fa-solid fa-circle"></i>
+                <span data-en="Live" data-pt="No ar">Live</span></span
+              >
             </div>
-        </section>
+            <p
+              data-en="A real-time collaborative party playlist: create a room, share the link or QR code, and let everyone add and vote on songs. Live-syncs YouTube &amp; Spotify, with a TV mode, AI playlists, and a synced queue for the whole room."
+              data-pt="Uma playlist de festa colaborativa em tempo real: crie uma sala, compartilhe o link ou QR Code e deixe a galera adicionar e votar nas músicas. Sincroniza YouTube e Spotify ao vivo, com Modo TV, playlists por IA e fila sincronizada para a sala toda."
+            >
+              A real-time collaborative party playlist: create a room, share the
+              link or QR code, and let everyone add and vote on songs.
+              Live-syncs YouTube &amp; Spotify, with a TV mode, AI playlists,
+              and a synced queue for the whole room.
+            </p>
+            <div class="card__tags">
+              <span data-en="Web app" data-pt="Web app">Web app</span
+              ><span data-en="Real-time" data-pt="Tempo real">Real-time</span
+              ><span>YouTube + Spotify</span><span>AI</span>
+            </div>
+          </a>
+
+          <a
+            class="card"
+            href="https://github.com/joaoferrete/lifter"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="card__head">
+              <h3>lifter</h3>
+              <span class="card__stars"
+                ><i class="fa-regular fa-star"></i> 3</span
+              >
+            </div>
+            <p
+              data-en="A personal workout coach that integrates with Hevy and Google Fit to plan and track training."
+              data-pt="Um coach de treino pessoal que integra com Hevy e Google Fit para planejar e acompanhar treinos."
+            >
+              A personal workout coach that integrates with Hevy and Google Fit
+              to plan and track training.
+            </p>
+            <div class="card__tags">
+              <span>Python</span><span>API</span><span>Google Fit</span
+              ><span>AI</span>
+            </div>
+          </a>
+
+          <a
+            class="card"
+            href="https://github.com/joaoferrete/Lighter"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="card__head">
+              <h3>Lighter</h3>
+              <span class="card__stars"
+                ><i class="fa-regular fa-star"></i> 2</span
+              >
+            </div>
+            <p
+              data-en="A GNOME extension that improves video-call lighting with adjustable white screen borders."
+              data-pt="Uma extensão GNOME que melhora a iluminação em videochamadas com bordas brancas ajustáveis na tela."
+            >
+              A GNOME extension that improves video-call lighting with
+              adjustable white screen borders.
+            </p>
+            <div class="card__tags">
+              <span>JavaScript</span><span>GNOME</span><span>GJS</span>
+            </div>
+          </a>
+
+          <a
+            class="card"
+            href="https://github.com/joaoferrete/ContainerLoadingProblem-IC"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="card__head">
+              <h3
+                data-en="Container Loading Problem"
+                data-pt="Container Loading Problem"
+              >
+                Container Loading Problem
+              </h3>
+            </div>
+            <p
+              data-en="Scientific-initiation research in combinatorial optimization: heuristics in C++ for a high-complexity packing problem."
+              data-pt="Pesquisa de iniciação científica em otimização combinatória: heurísticas em C++ para um problema de empacotamento de alta complexidade."
+            >
+              Scientific-initiation research in combinatorial optimization:
+              heuristics in C++ for a high-complexity packing problem.
+            </p>
+            <div class="card__tags">
+              <span>C++</span
+              ><span data-en="Optimization" data-pt="Otimização"
+                >Optimization</span
+              ><span data-en="Research" data-pt="Pesquisa">Research</span>
+            </div>
+          </a>
+
+          <a
+            class="card"
+            href="https://github.com/joaoferrete/MarathonAlg"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="card__head">
+              <h3>MarathonAlg</h3>
+            </div>
+            <p
+              data-en="A curated library of algorithms and data structures for competitive programming contests."
+              data-pt="Uma biblioteca curada de algoritmos e estruturas de dados para maratonas de programação."
+            >
+              A curated library of algorithms and data structures for
+              competitive programming contests.
+            </p>
+            <div class="card__tags">
+              <span>C++</span
+              ><span data-en="Algorithms" data-pt="Algoritmos">Algorithms</span>
+            </div>
+          </a>
+
+          <a
+            class="card"
+            href="https://github.com/joaoferrete/URI"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="card__head">
+              <h3>Beecrowd / URI</h3>
+              <span class="card__stars"
+                ><i class="fa-regular fa-star"></i> 1</span
+              >
+            </div>
+            <p
+              data-en="Accepted solutions to problems from the Beecrowd (formerly URI) online judge."
+              data-pt="Soluções aceitas para problemas do juiz online Beecrowd (antigo URI)."
+            >
+              Accepted solutions to problems from the Beecrowd (formerly URI)
+              online judge.
+            </p>
+            <div class="card__tags">
+              <span>C++</span
+              ><span data-en="Problem solving" data-pt="Resolução"
+                >Problem solving</span
+              >
+            </div>
+          </a>
+        </div>
+
+        <a
+          class="more-link"
+          href="https://github.com/joaoferrete"
+          target="_blank"
+          rel="noopener"
+          data-en="More on GitHub →"
+          data-pt="Mais no GitHub →"
+          >More on GitHub →</a
+        >
+      </section>
+
+      <!-- ===================== EXPERIENCE ===================== -->
+      <section class="section" id="experience">
+        <div class="section__label">
+          <span class="node-dot"></span>
+          <span data-en="Experience" data-pt="Trajetória">Experience</span>
+        </div>
+        <h2
+          class="section__title"
+          data-en="Where I've been."
+          data-pt="Por onde passei."
+        >
+          Where I've been.
+        </h2>
+
+        <ol class="timeline">
+          <li class="timeline__item">
+            <span class="timeline__date"
+              >Feb 2025 —
+              <span data-en="Present" data-pt="Atual">Present</span></span
+            >
+            <h3
+              data-en="Software Engineer II &amp; Tech Lead — IoT Video"
+              data-pt="Engenheiro de Software Pleno &amp; Tech Lead — IoT Vídeo"
+            >
+              Software Engineer II &amp; Tech Lead — IoT Video
+            </h3>
+            <p class="timeline__org">
+              Cobli · São Mateus (<span data-en="Remote" data-pt="Remoto"
+                >Remote</span
+              >)
+            </p>
+            <p
+              data-en="<strong>Tech Lead of the Camera/IoT Video squad:</strong> Architected real-time services for low-latency communication between embedded hardware and backend. Built scalable microservices in Kotlin, Java/Spring Boot, Go, and Python. Led stream processing with Apache Flink. Acted as the technical focal point for international vendors on firmware and hardware homologation."
+              data-pt="<strong>Tech Lead da squad de Câmera/IoT Vídeo:</strong> Arquitetei serviços real-time para comunicação de baixa latência entre hardware embarcado e backend. Construí microsserviços escaláveis em Kotlin, Java/Spring Boot, Go e Python. Liderei o processamento de streams com Apache Flink. Atuei como ponto focal técnico com fornecedores internacionais para firmware e homologação de hardware."
+            >
+              <strong>Tech Lead of the Camera/IoT Video squad:</strong>
+              Architected real-time services for low-latency communication
+              between embedded hardware and backend. Built scalable
+              microservices in Kotlin, Java/Spring Boot, Go, and Python. Led
+              stream processing with Apache Flink. Acted as the technical focal
+              point for international vendors on firmware and hardware
+              homologation.
+            </p>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__date">Jan 2024 — Jan 2025</span>
+            <h3
+              data-en="Software Engineer I"
+              data-pt="Engenheiro de Software Júnior"
+            >
+              Software Engineer I
+            </h3>
+            <p class="timeline__org">
+              Cobli · São Mateus (<span data-en="Remote" data-pt="Remoto"
+                >Remote</span
+              >)
+            </p>
+            <p
+              data-en="Built and maintained critical microservices for IoT Video in a polyglot environment. <strong>Engineered data pipelines</strong> with Apache Flink and Scala, ensured high availability for video-ingestion infrastructure, and accelerated internal workflows by developing admin tools with React."
+              data-pt="Construí e mantive microsserviços críticos de IoT Vídeo em um ambiente poliglota. <strong>Engenhei pipelines de dados</strong> com Apache Flink e Scala, garanti alta disponibilidade para a infraestrutura de ingestão de vídeo e acelerei fluxos internos desenvolvendo ferramentas administrativas com React."
+            >
+              Built and maintained critical microservices for IoT Video in a
+              polyglot environment.
+              <strong>Engineered data pipelines</strong> with Apache Flink and
+              Scala, ensured high availability for video-ingestion
+              infrastructure, and accelerated internal workflows by developing
+              admin tools with React.
+            </p>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__date">Aug 2022 — Dec 2023</span>
+            <h3
+              data-en="Software Engineering &amp; Embedded Systems Intern"
+              data-pt="Estagiário em Engenharia de Software e Sistemas Embarcados"
+            >
+              Software Engineering &amp; Embedded Systems Intern
+            </h3>
+            <p class="timeline__org">
+              Cobli · São Mateus (<span data-en="Remote" data-pt="Remoto"
+                >Remote</span
+              >)
+            </p>
+            <p
+              data-en="Helped create the Video Telemetry product from the ground up — backend (Kotlin, Java, Python, Go, Scala) and frontend (React, TypeScript) — plus R&amp;D for embedded systems and microservices setup."
+              data-pt="Ajudei a criar o produto de Vídeo Telemetria do zero — backend (Kotlin, Java, Python, Go, Scala) e frontend (React, TypeScript) — além de P&amp;D para sistemas embarcados e configuração de microsserviços."
+            >
+              Helped create the Video Telemetry product from the ground up —
+              backend (Kotlin, Java, Python, Go, Scala) and frontend (React,
+              TypeScript) — plus R&amp;D for embedded systems and microservices
+              setup.
+            </p>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__date">Mar 2022 — Oct 2022</span>
+            <h3
+              data-en="Development Manager / Associate"
+              data-pt="Gerente / Assessor de Desenvolvimento"
+            >
+              Development Manager / Associate
+            </h3>
+            <p class="timeline__org">
+              Adapti Soluções Web ·
+              <span data-en="Junior Enterprise" data-pt="Empresa Júnior"
+                >Junior Enterprise</span
+              >
+            </p>
+            <p
+              data-en="Led a development squad and built fullstack web systems for clients with PHP (Laravel), HTML, CSS, and JavaScript."
+              data-pt="Liderei uma squad de desenvolvimento e construí sistemas web fullstack para clientes com PHP (Laravel), HTML, CSS e JavaScript."
+            >
+              Led a development squad and built fullstack web systems for
+              clients with PHP (Laravel), HTML, CSS, and JavaScript.
+            </p>
+          </li>
+          <li class="timeline__item timeline__item--edu">
+            <span class="timeline__date"
+              >2018 —
+              <span data-en="Exp. Mar 2026" data-pt="Prev. Mar 2026"
+                >Exp. Mar 2026</span
+              ></span
+            >
+            <h3
+              data-en="BSc in Computer Science"
+              data-pt="Bacharelado em Ciência da Computação"
+            >
+              BSc in Computer Science
+            </h3>
+            <p class="timeline__org">
+              UFES —
+              <span
+                data-en="Federal University of Espírito Santo"
+                data-pt="Universidade Federal do Espírito Santo"
+                >Federal University of Espírito Santo</span
+              >
+            </p>
+            <p
+              data-en="Teaching assistant (Data Structures, Functional Programming) · scientific initiation in combinatorial optimization · competitive programming (SBC) · Vice-General Chair of VI ENCOMP."
+              data-pt="Monitor (Estrutura de Dados, Programação Funcional) · iniciação científica em otimização combinatória · programação competitiva (SBC) · Vice-Coordenador Geral do VI ENCOMP."
+            >
+              Teaching assistant (Data Structures, Functional Programming) ·
+              scientific initiation in combinatorial optimization · competitive
+              programming (SBC) · Vice-General Chair of VI ENCOMP.
+            </p>
+          </li>
+        </ol>
+      </section>
+
+      <!-- ===================== CONTACT ===================== -->
+      <section class="section section--contact" id="contact">
+        <div class="section__label">
+          <span class="node-dot"></span>
+          <span data-en="Contact" data-pt="Contato">Contact</span>
+        </div>
+        <h2
+          class="section__title section__title--big"
+          data-en="Let's build something."
+          data-pt="Vamos construir algo."
+        >
+          Let's build something.
+        </h2>
+        <p
+          class="contact__sub"
+          data-en="Open to interesting backend, IoT, and distributed-systems work. The fastest way to reach me is email."
+          data-pt="Aberto a trabalhos interessantes de backend, IoT e sistemas distribuídos. O jeito mais rápido de me encontrar é por email."
+        >
+          Open to interesting backend, IoT, and distributed-systems work. The
+          fastest way to reach me is email.
+        </p>
+
+        <div class="contact__links">
+          <a href="mailto:jpferreteg@gmail.com">
+            <i class="fa-regular fa-envelope"></i
+            ><span>jpferreteg@gmail.com</span>
+          </a>
+          <a
+            href="https://github.com/joaoferrete"
+            target="_blank"
+            rel="noopener"
+          >
+            <i class="fa-brands fa-github"></i
+            ><span>github.com/joaoferrete</span>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/joaoferrete/"
+            target="_blank"
+            rel="noopener"
+          >
+            <i class="fa-brands fa-linkedin"></i
+            ><span>linkedin.com/in/joaoferrete</span>
+          </a>
+        </div>
+      </section>
     </main>
 
     <!-- ===================== FOOTER ===================== -->
     <footer class="site-footer">
-        <span data-en="Built by João Ferrete" data-pt="Feito por João Ferrete">Built by João Ferrete</span>
-        <span class="site-footer__year">© 2026</span>
-        <a href="#top" class="to-top" data-en="Back to top ↑" data-pt="Voltar ao topo ↑">Back to top ↑</a>
+      <span data-en="Built by João Ferrete" data-pt="Feito por João Ferrete"
+        >Built by João Ferrete</span
+      >
+      <span class="site-footer__year">© 2026</span>
+      <a
+        href="#top"
+        class="to-top"
+        data-en="Back to top ↑"
+        data-pt="Voltar ao topo ↑"
+        >Back to top ↑</a
+      >
     </footer>
 
     <script src="main.js"></script>
-</body>
-
+  </body>
 </html>
