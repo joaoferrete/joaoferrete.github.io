@@ -3,7 +3,8 @@
    1. Bilingual PT/EN toggle (localStorage + navigator default)
    2. Mobile nav drawer
    3. Active-section nav highlighting
-   4. Hero graph signature (pathfinding-style traversal)
+   4. Count-up stats in the About section
+   5. Hero graph signature (pathfinding-style traversal)
    ============================================================ */
 
 (function () {
@@ -57,6 +58,11 @@
             opt.getAttribute("data-lang") === lang,
           );
         },
+      );
+      // announce the action it will perform, in the current language
+      langToggle.setAttribute(
+        "aria-label",
+        lang === "pt" ? "Mudar para inglês" : "Switch to Portuguese",
       );
     }
 
@@ -128,7 +134,73 @@
     });
   }
 
-  /* ---------- 4. HERO GRAPH SIGNATURE ---------- */
+  /* ---------- 4. COUNT-UP STATS ---------- */
+  (function () {
+    var reduced =
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var statEls = Array.prototype.slice.call(
+      document.querySelectorAll(".about__facts .num"),
+    );
+    if (!statEls.length) return;
+
+    // Parse each stat into prefix / number / suffix so we can preserve
+    // things like the "+" in "3+" while animating only the digits.
+    var stats = statEls
+      .map(function (el) {
+        var m = el.textContent.trim().match(/^(\D*)(\d+)(\D*)$/);
+        return m
+          ? {
+              el: el,
+              prefix: m[1],
+              target: parseInt(m[2], 10),
+              suffix: m[3],
+            }
+          : null;
+      })
+      .filter(Boolean);
+
+    function render(s, value) {
+      s.el.textContent = s.prefix + value + s.suffix;
+    }
+
+    function runCount() {
+      var DURATION = 1300;
+      var start = null;
+      function step(ts) {
+        if (start === null) start = ts;
+        var p = Math.min((ts - start) / DURATION, 1);
+        var e = 1 - Math.pow(1 - p, 3); // easeOutCubic
+        stats.forEach(function (s) {
+          render(s, Math.round(s.target * e));
+        });
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    // Reduced motion or no observer support: keep the real numbers, no run.
+    if (reduced || !("IntersectionObserver" in window)) return;
+
+    // Start at zero, then count up once the stats scroll into view.
+    stats.forEach(function (s) {
+      render(s, 0);
+    });
+    var target = statEls[0].closest(".about__facts") || statEls[0];
+    var statObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          runCount();
+          statObserver.disconnect();
+        });
+      },
+      { threshold: 0.4 },
+    );
+    statObserver.observe(target);
+  })();
+
+  /* ---------- 5. HERO GRAPH SIGNATURE ---------- */
   var svg = document.getElementById("graph");
   var prefersReduced =
     window.matchMedia &&

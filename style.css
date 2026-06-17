@@ -61,6 +61,27 @@ a {
   border-radius: 4px;
 }
 
+/* ---------- skip link ---------- */
+.skip-link {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 200;
+  background: var(--teal);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  transform: translateY(-150%);
+  transition: transform 0.2s ease;
+}
+.skip-link:focus {
+  transform: translateY(0);
+}
+
 /* ---------- buttons ---------- */
 .btn {
   display: inline-flex;
@@ -240,10 +261,15 @@ a {
   border-bottom: 1px solid var(--line);
   padding: 8px var(--pad) 16px;
   transform: translateY(-120%);
-  transition: transform 0.3s ease;
+  visibility: hidden;
+  transition:
+    transform 0.3s ease,
+    visibility 0s linear 0.3s;
 }
 .mobile-nav.is-open {
   transform: translateY(0);
+  visibility: visible;
+  transition: transform 0.3s ease;
 }
 .mobile-nav a {
   padding: 14px 0;
@@ -409,6 +435,7 @@ a {
   font-weight: 700;
   color: var(--teal);
   line-height: 1;
+  font-variant-numeric: tabular-nums;
 }
 .about__facts li span:last-child {
   font-family: var(--font-mono);
