@@ -35,6 +35,22 @@ html {
   scroll-padding-top: 90px;
 }
 
+/* ---------- SCROLLBAR ---------- */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--ink);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 5px;
+  border: 2px solid var(--ink);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--teal-dim);
+}
+
 body {
   margin: 0;
   background-color: var(--ink);
@@ -684,24 +700,70 @@ a {
   flex-direction: column;
   gap: 4px;
 }
-.contact__links a {
+.contact__links > a,
+.contact__links .email-row {
   display: flex;
   align-items: center;
   gap: 16px;
   padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+.contact__links > a {
   text-decoration: none;
   color: var(--text);
   font-family: var(--font-mono);
   font-size: clamp(15px, 2.4vw, 18px);
-  border-bottom: 1px solid var(--line);
   transition:
     color 0.2s ease,
     padding-left 0.2s ease;
 }
-.contact__links a:hover {
+.contact__links > a:hover {
   color: var(--teal);
   padding-left: 10px;
 }
+.contact__links .email-row a {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: clamp(15px, 2.4vw, 18px);
+  flex: 1;
+  transition:
+    color 0.2s ease,
+    padding-left 0.2s ease;
+}
+.contact__links .email-row a:hover {
+  color: var(--teal);
+  padding-left: 10px;
+}
+
+.copy-btn {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.copy-btn:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+  background: rgba(91, 200, 194, 0.1);
+  transform: translateY(-2px);
+}
+.copy-btn.copied {
+  background: var(--teal);
+  color: var(--ink);
+  border-color: var(--teal);
+}
+
 .contact__links i {
   color: var(--teal);
   width: 24px;

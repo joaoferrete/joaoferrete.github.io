@@ -45,8 +45,33 @@
 
     <link rel="icon" href="assets/logo.png" />
 
+    <!-- SEO / JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Person",
+      "name": "João Paulo Ferrete",
+      "url": "https://joaoferrete.github.io/",
+      "image": "https://joaoferrete.github.io/assets/logo.png",
+      "sameAs": [
+        "https://github.com/joaoferrete",
+        "https://www.linkedin.com/in/joaoferrete/"
+      ],
+      "jobTitle": "Software Engineer II & Tech Lead",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Cobli"
+      }
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link 
+      rel="preload" 
+      as="style" 
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" 
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
@@ -724,10 +749,14 @@
         </p>
 
         <div class="contact__links reveal">
-          <a href="mailto:jpferreteg@gmail.com">
-            <i class="fa-regular fa-envelope"></i
-            ><span>jpferreteg@gmail.com</span>
-          </a>
+          <div class="email-row">
+            <a href="mailto:jpferreteg@gmail.com">
+              <i class="fa-regular fa-envelope"></i><span id="emailText">jpferreteg@gmail.com</span>
+            </a>
+            <button class="copy-btn" id="copyBtn" aria-label="Copy email" title="Copy email">
+              <i class="fa-regular fa-copy"></i>
+            </button>
+          </div>
           <a
             href="https://github.com/joaoferrete"
             target="_blank"

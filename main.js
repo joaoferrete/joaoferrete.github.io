@@ -490,5 +490,24 @@
       observer.observe(el);
     });
   })();
+
+  /* ---------- 7. COPY EMAIL ---------- */
+  var copyBtn = document.getElementById("copyBtn");
+  var emailText = document.getElementById("emailText");
+  if (copyBtn && emailText) {
+    copyBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      var text = emailText.textContent.trim();
+      navigator.clipboard.writeText(text).then(function () {
+        var originalHTML = copyBtn.innerHTML;
+        copyBtn.innerHTML = '<i class="fa-solid fa-check"></i>';
+        copyBtn.classList.add("copied");
+        setTimeout(function () {
+          copyBtn.innerHTML = originalHTML;
+          copyBtn.classList.remove("copied");
+        }, 2000);
+      });
+    });
+  }
 })();
 
