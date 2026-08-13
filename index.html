@@ -3,6 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Sets <html lang> before first paint. main.js runs after the body and
+         would otherwise leave the document tagged "en" for a PT reader — and
+         for the crawler, which never waits for the toggle. -->
+    <script>
+      (function () {
+        try {
+          var l = localStorage.getItem("jf-lang");
+          if (l !== "pt" && l !== "en") {
+            l =
+              (navigator.language || "en").toLowerCase().indexOf("pt") === 0
+                ? "pt"
+                : "en";
+          }
+          document.documentElement.lang = l === "pt" ? "pt-br" : "en";
+        } catch (e) {}
+      })();
+    </script>
     <meta
       name="description"
       data-en="João Paulo Souza Ferrete — Software Engineer II & Tech Lead for IoT Video at Cobli. Backend, real-time systems, and competitive programming."
@@ -240,6 +258,30 @@
             >
               From intern to Tech Lead of the IoT Video squad.
             </h2>
+            <ul class="about__facts reveal">
+              <li>
+                <span class="num">3+</span
+                ><span data-en="years at Cobli" data-pt="anos na Cobli"
+                  >years at Cobli</span
+                >
+              </li>
+              <li>
+                <span class="num">10</span
+                ><span
+                  data-en="languages shipped to prod"
+                  data-pt="linguagens em produção"
+                  >languages shipped to prod</span
+                >
+              </li>
+              <li>
+                <span class="num">7</span
+                ><span
+                  data-en="projects built from scratch"
+                  data-pt="projetos construídos do zero"
+                  >projects built from scratch</span
+                >
+              </li>
+            </ul>
           </div>
           <div class="about__body">
             <p
@@ -266,30 +308,6 @@
               Structures and Functional Programming, and I led VI ENCOMP, the
               largest computing event in northern Espírito Santo.
             </p>
-            <ul class="about__facts reveal">
-              <li>
-                <span class="num">3+</span
-                ><span data-en="years at Cobli" data-pt="anos na Cobli"
-                  >years at Cobli</span
-                >
-              </li>
-              <li>
-                <span class="num">10</span
-                ><span
-                  data-en="languages shipped to prod"
-                  data-pt="linguagens em produção"
-                  >languages shipped to prod</span
-                >
-              </li>
-              <li>
-                <span class="num">7</span
-                ><span
-                  data-en="projects built from scratch"
-                  data-pt="projetos construídos do zero"
-                  >projects built from scratch</span
-                >
-              </li>
-            </ul>
           </div>
         </div>
       </section>
@@ -411,45 +429,168 @@
           Things I've built.
         </h2>
 
-        <!-- TODO: João — add/remove projects here as you like -->
         <div class="projects">
-          <a
-            class="card reveal"
-            href="https://golister.app"
-            target="_blank"
-            rel="noopener"
-          >
+          <!-- ---------- Go Lister ---------- -->
+          <article class="card card--featured reveal">
             <div class="card__head">
-              <h3>Go Lister</h3>
+              <h3>
+                <a href="https://golister.app" target="_blank" rel="noopener"
+                  >Go Lister</a
+                >
+              </h3>
               <span class="card__live"
                 ><i class="fa-solid fa-circle"></i>
                 <span data-en="Live" data-pt="No ar">Live</span></span
               >
             </div>
             <p
-              data-en="A real-time collaborative party playlist: create a room, share the link or QR code, and let everyone add and vote on songs. Live-syncs YouTube &amp; Spotify, with a TV mode, AI playlists, and a synced queue for the whole room."
-              data-pt="Uma playlist de festa colaborativa em tempo real: crie uma sala, compartilhe o link ou QR Code e deixe a galera adicionar e votar nas músicas. Sincroniza YouTube e Spotify ao vivo, com Modo TV, playlists por IA e fila sincronizada para a sala toda."
+              data-en="A real-time collaborative music platform: one room, one link, and a queue everyone controls playing in sync. Kotlin/Spring Boot backend, three React frontends, and a Chromecast receiver."
+              data-pt="Plataforma de música colaborativa em tempo real: uma sala, um link e uma fila que todo mundo controla, tocando em sincronia. Backend em Kotlin/Spring Boot, três frontends React e um receiver de Chromecast."
             >
-              A real-time collaborative party playlist: create a room, share the
-              link or QR code, and let everyone add and vote on songs.
-              Live-syncs YouTube &amp; Spotify, with a TV mode, AI playlists,
-              and a synced queue for the whole room.
+              A real-time collaborative music platform: one room, one link, and
+              a queue everyone controls playing in sync. Kotlin/Spring Boot
+              backend, three React frontends, and a Chromecast receiver.
             </p>
             <div class="card__tags">
-              <span data-en="Web app" data-pt="Web app">Web app</span
-              ><span data-en="Real-time" data-pt="Tempo real">Real-time</span
-              ><span>YouTube + Spotify</span><span>AI</span>
+              <span>Kotlin</span><span>Spring Boot</span><span>WebSocket</span
+              ><span>Redis</span><span>React</span>
             </div>
-          </a>
+            <button
+              class="card__toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="case-golister"
+            >
+              <span data-en="The engineering" data-pt="A engenharia"
+                >The engineering</span
+              >
+              <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="card__case" id="case-golister">
+              <div class="card__case-inner">
+                <img
+                  src="assets/projects/go-lister.jpg"
+                  alt="Go Lister landing page showing the live player and guest queue"
+                  loading="lazy"
+                  width="795"
+                  height="595"
+                />
+                <h4 data-en="The problem" data-pt="O problema">The problem</h4>
+                <p
+                  data-en="Keeping several devices on the same second of the same song, when each provider exposes playback differently — and the browser won't let you authenticate a WebSocket properly. The session id used to ride in the connect URL, where it leaks into proxy logs, browser history and Referer."
+                  data-pt="Manter vários aparelhos no mesmo segundo da mesma música, quando cada provedor expõe o playback de um jeito — e o navegador não deixa você autenticar um WebSocket direito. O id de sessão viajava na URL da conexão, onde vaza para log de proxy, histórico do navegador e Referer."
+                >
+                  Keeping several devices on the same second of the same song,
+                  when each provider exposes playback differently — and the
+                  browser won't let you authenticate a WebSocket properly.
+                </p>
+                <h4 data-en="The decision" data-pt="A decisão">The decision</h4>
+                <p
+                  data-en="The server owns the queue and the clock. The WebSocket is authenticated by ticket instead: 32 bytes of SecureRandom, held in Redis for 30 seconds and consumed with GETDEL, so a ticket can never be redeemed twice and a leaked one is worthless. Spotify runs in two modes decided at render time — the Embed IFrame for guests, the Connect API for a host with Premium."
+                  data-pt="O servidor é dono da fila e do relógio. O WebSocket passou a ser autenticado por ticket: 32 bytes de SecureRandom, guardados no Redis por 30 segundos e consumidos com GETDEL, então um ticket nunca é resgatado duas vezes e um ticket vazado não vale nada. O Spotify roda em dois modos decididos em tempo de render — Embed IFrame para convidado, API do Connect para host com Premium."
+                >
+                  The server owns the queue and the clock. The WebSocket is
+                  authenticated by ticket instead.
+                </p>
+                <h4 data-en="The consequence" data-pt="A consequência">
+                  The consequence
+                </h4>
+                <p
+                  data-en="nginx became the only ingress to the backend, with TLS terminated at Cloudflare. Every new feature ships behind a flag with allowlist or percentage rollout. And the terms of use are version-controlled in the repo, forcing re-acceptance when the version moves."
+                  data-pt="O nginx virou o único ingress do backend, com TLS terminado no Cloudflare. Todo recurso novo entra atrás de uma feature flag com rollout por allowlist ou porcentagem. E os termos de uso são versionados no repositório, forçando re-aceite quando a versão sobe."
+                >
+                  nginx became the only ingress to the backend, with TLS
+                  terminated at Cloudflare.
+                </p>
+              </div>
+            </div>
+          </article>
 
-          <a
-            class="card reveal"
-            href="https://github.com/joaoferrete/lifter"
-            target="_blank"
-            rel="noopener"
-          >
+          <!-- ---------- Terminal Assistant ---------- -->
+          <article class="card card--featured reveal">
             <div class="card__head">
-              <h3>lifter</h3>
+              <h3>
+                <a
+                  href="https://github.com/joaoferrete/terminal-assistant"
+                  target="_blank"
+                  rel="noopener"
+                  >Terminal Assistant</a
+                >
+              </h3>
+            </div>
+            <p
+              data-en="Notes, tasks and smart home under a single trigger engine, in one command. Automations are plain Python: your machine's own state — the mic in use, the hour of the day — drives your lights and your reminders."
+              data-pt="Notas, tarefas e casa inteligente sob um único motor de gatilhos, em um comando. Automações são Python puro: o estado da própria máquina — o microfone em uso, a hora do dia — comanda suas luzes e seus lembretes."
+            >
+              Notes, tasks and smart home under a single trigger engine, in one
+              command. Automations are plain Python: your machine's own state
+              drives your lights and your reminders.
+            </p>
+            <div class="card__tags">
+              <span>Python</span><span>CLI</span><span>Home Assistant</span
+              ><span>SQLite</span
+              ><span data-en="Automation" data-pt="Automação">Automation</span>
+            </div>
+            <button
+              class="card__toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="case-ta"
+            >
+              <span data-en="The engineering" data-pt="A engenharia"
+                >The engineering</span
+              >
+              <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="card__case" id="case-ta">
+              <div class="card__case-inner">
+                <img
+                  src="assets/projects/terminal-assistant.jpg"
+                  alt="Terminal Assistant kanban board with tasks ordered by due date"
+                  loading="lazy"
+                  width="900"
+                  height="590"
+                />
+                <h4 data-en="The problem" data-pt="O problema">The problem</h4>
+                <p
+                  data-en="Home Assistant does not know you just joined a call, and GNOME does not know how to turn on a lamp. Whoever runs both wants one to trigger the other — but wiring them together produces a tool that only works on the machine of the person who wrote it."
+                  data-pt="O Home Assistant não sabe que você acabou de entrar numa reunião, e o GNOME não sabe acender uma lâmpada. Quem roda os dois quer o gatilho de um valendo no outro — mas amarrar tudo junto produz uma ferramenta que só funciona na máquina de quem a escreveu."
+                >
+                  Home Assistant does not know you just joined a call, and GNOME
+                  does not know how to turn on a lamp.
+                </p>
+                <h4 data-en="The decision" data-pt="A decisão">The decision</h4>
+                <p
+                  data-en="Its own trigger engine in Python, and one hard rule: no integration may be mandatory. Each one checks whether it can work and goes quiet if it cannot, and `ta doctor` answers what holds on your machine with the fix for each line. The microphone, read from PipeWire, is the meeting trigger. The LLM is never on the critical path, so opening the board never costs money."
+                  data-pt="Motor de gatilhos próprio em Python, e uma regra dura: nenhuma integração pode ser obrigatória. Cada uma verifica se consegue funcionar e se cala se não conseguir, e o `ta doctor` responde o que vale na sua máquina, com a correção de cada linha. O microfone, lido do PipeWire, é o gatilho de reunião. A IA nunca fica no caminho crítico, então abrir o mural nunca custa dinheiro."
+                >
+                  Its own trigger engine in Python, and one hard rule: no
+                  integration may be mandatory.
+                </p>
+                <h4 data-en="The consequence" data-pt="A consequência">
+                  The consequence
+                </h4>
+                <p
+                  data-en="The core — notes, board, engine, scheduler — runs anywhere Python runs and a file can be written. The daemon listens on 127.0.0.1 only and refuses to start on a reachable address without a token, because it exposes every note you have written and the credential that controls your house. The ringlight action drives Lighter, a GNOME extension I also wrote."
+                  data-pt="O núcleo — notas, mural, motor, agendador — roda em qualquer lugar que tenha Python e um arquivo para escrever. O daemon só escuta em 127.0.0.1 e se recusa a subir em endereço alcançável sem token, porque expõe todas as notas que você escreveu e a credencial que controla sua casa. A ação de ringlight aciona a Lighter, extensão GNOME que eu também escrevi."
+                >
+                  The core runs anywhere Python runs and a file can be written.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- ---------- lifter -> Go Lifter ---------- -->
+          <article class="card card--featured reveal">
+            <div class="card__head">
+              <h3>
+                <a
+                  href="https://github.com/joaoferrete/lifter"
+                  target="_blank"
+                  rel="noopener"
+                  >lifter → Go Lifter</a
+                >
+              </h3>
               <span class="card__meta">
                 <span class="card__pypi"
                   ><i class="fa-brands fa-python"></i> PyPI</span
@@ -460,121 +601,127 @@
               </span>
             </div>
             <p
-              data-en="An interactive terminal client for Hevy workouts: analytics, goal tracking, Google Fit sync, and an AI coach. Available on PyPI as lifter-cli."
-              data-pt="Um cliente interativo de terminal para treinos do Hevy: análises, acompanhamento de metas, sincronização com Google Fit e um coach de IA. Disponível no PyPI como lifter-cli."
+              data-en="A training coach that started as a Python CLI on PyPI and became a native Android app in Kotlin and Compose."
+              data-pt="Um coach de treino que começou como CLI em Python, publicada no PyPI, e virou app Android nativo em Kotlin e Compose."
             >
-              An interactive terminal client for Hevy workouts: analytics, goal
-              tracking, Google Fit sync, and an AI coach. Available on PyPI as
-              lifter-cli.
+              A training coach that started as a Python CLI on PyPI and became a
+              native Android app in Kotlin and Compose.
             </p>
             <div class="card__tags">
-              <span>Python</span><span>CLI</span><span>PyPI</span
-              ><span>Google Fit</span><span>AI</span>
+              <span>Python</span><span>Kotlin</span><span>Compose</span
+              ><span>PyPI</span><span>Google Fit</span>
             </div>
-          </a>
-
-          <a
-            class="card reveal"
-            href="https://github.com/joaoferrete/Lighter"
-            target="_blank"
-            rel="noopener"
-          >
-            <div class="card__head">
-              <h3>Lighter</h3>
-              <span class="card__stars"
-                ><i class="fa-regular fa-star"></i> 2</span
+            <button
+              class="card__toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="case-lifter"
+            >
+              <span data-en="The engineering" data-pt="A engenharia"
+                >The engineering</span
               >
+              <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="card__case" id="case-lifter">
+              <div class="card__case-inner">
+                <img
+                  src="assets/projects/go-lifter.jpg"
+                  alt="Go Lifter home screen showing training frequency and recovery score"
+                  loading="lazy"
+                  width="760"
+                  height="704"
+                />
+                <h4 data-en="The problem" data-pt="O problema">The problem</h4>
+                <p
+                  data-en="A coach is only useful if it remembers your history — and the minute it remembers, it can also ruin your data. On top of that, an estimated number and a measured one are not worth the same thing, but on screen they look identical."
+                  data-pt="Um coach só é útil se lembrar do seu histórico — e no minuto em que ele lembra, ele também pode estragar seus dados. Além disso, um número estimado e um medido não valem a mesma coisa, mas na tela parecem idênticos."
+                >
+                  A coach is only useful if it remembers your history — and the
+                  minute it remembers, it can also ruin your data.
+                </p>
+                <h4 data-en="The decision" data-pt="A decisão">The decision</h4>
+                <p
+                  data-en="The coach proposes, it never writes: every change to a routine or a goal goes through your approval. Every value carries its own provenance, and an estimate takes a different colour from a measurement. And the whole app stays usable with no AI at all."
+                  data-pt="O Coach propõe, nunca escreve: toda alteração em rotina ou meta passa pela sua aprovação. Todo valor carrega a própria procedência, e um estimado ganha cor diferente de um medido. E o app inteiro continua usável sem IA nenhuma."
+                >
+                  The coach proposes, it never writes: every change goes through
+                  your approval.
+                </p>
+                <h4 data-en="The consequence" data-pt="A consequência">
+                  The consequence
+                </h4>
+                <p
+                  data-en="The CLI shipped to PyPI with six interchangeable model providers and independent profiles on the same machine. The Android app was born with a pure domain module that tests in milliseconds without an emulator, one database per profile, and an importer for the CLI's history — the succession is literal, not just in spirit."
+                  data-pt="A CLI foi publicada no PyPI com seis provedores de modelo intercambiáveis e perfis independentes na mesma máquina. O app Android nasceu com um módulo de domínio puro, que testa em milissegundos sem emulador, um banco por perfil, e um importador do histórico da CLI — a sucessão é literal, não só de espírito."
+                >
+                  The CLI shipped to PyPI with six interchangeable model
+                  providers and independent profiles.
+                </p>
+              </div>
             </div>
-            <p
-              data-en="A GNOME extension that improves video-call lighting with adjustable white screen borders."
-              data-pt="Uma extensão GNOME que melhora a iluminação em videochamadas com bordas brancas ajustáveis na tela."
-            >
-              A GNOME extension that improves video-call lighting with
-              adjustable white screen borders.
-            </p>
-            <div class="card__tags">
-              <span>JavaScript</span><span>GNOME</span><span>GJS</span>
-            </div>
-          </a>
-
-          <a
-            class="card reveal"
-            href="https://github.com/joaoferrete/ContainerLoadingProblem-IC"
-            target="_blank"
-            rel="noopener"
-          >
-            <div class="card__head">
-              <h3
-                data-en="Container Loading Problem"
-                data-pt="Container Loading Problem"
-              >
-                Container Loading Problem
-              </h3>
-            </div>
-            <p
-              data-en="Scientific-initiation research in combinatorial optimization: heuristics in C++ for a high-complexity packing problem."
-              data-pt="Pesquisa de iniciação científica em otimização combinatória: heurísticas em C++ para um problema de empacotamento de alta complexidade."
-            >
-              Scientific-initiation research in combinatorial optimization:
-              heuristics in C++ for a high-complexity packing problem.
-            </p>
-            <div class="card__tags">
-              <span>C++</span
-              ><span data-en="Optimization" data-pt="Otimização"
-                >Optimization</span
-              ><span data-en="Research" data-pt="Pesquisa">Research</span>
-            </div>
-          </a>
-
-          <a
-            class="card reveal"
-            href="https://github.com/joaoferrete/MarathonAlg"
-            target="_blank"
-            rel="noopener"
-          >
-            <div class="card__head">
-              <h3>MarathonAlg</h3>
-            </div>
-            <p
-              data-en="A curated library of algorithms and data structures for competitive programming contests."
-              data-pt="Uma biblioteca curada de algoritmos e estruturas de dados para maratonas de programação."
-            >
-              A curated library of algorithms and data structures for
-              competitive programming contests.
-            </p>
-            <div class="card__tags">
-              <span>C++</span
-              ><span data-en="Algorithms" data-pt="Algoritmos">Algorithms</span>
-            </div>
-          </a>
-
-          <a
-            class="card reveal"
-            href="https://github.com/joaoferrete/URI"
-            target="_blank"
-            rel="noopener"
-          >
-            <div class="card__head">
-              <h3>Beecrowd / URI</h3>
-              <span class="card__stars"
-                ><i class="fa-regular fa-star"></i> 1</span
-              >
-            </div>
-            <p
-              data-en="Accepted solutions to problems from the Beecrowd (formerly URI) online judge."
-              data-pt="Soluções aceitas para problemas do juiz online Beecrowd (antigo URI)."
-            >
-              Accepted solutions to problems from the Beecrowd (formerly URI)
-              online judge.
-            </p>
-            <div class="card__tags">
-              <span>C++</span
-              ><span data-en="Problem solving" data-pt="Resolução"
-                >Problem solving</span
-              >
-            </div>
-          </a>
+          </article>
         </div>
+
+        <h3
+          class="projects__aside-label reveal"
+          data-en="Also built"
+          data-pt="Também construí"
+        >
+          Also built
+        </h3>
+        <ul class="projects-aside reveal">
+          <li>
+            <a
+              href="https://github.com/joaoferrete/Lighter"
+              target="_blank"
+              rel="noopener"
+            >
+              <span class="pa__name">Lighter</span>
+              <span
+                class="pa__desc"
+                data-en="A GNOME extension that improves video-call lighting with adjustable white screen borders."
+                data-pt="Extensão GNOME que melhora a iluminação em videochamadas com bordas brancas ajustáveis na tela."
+                >A GNOME extension that improves video-call lighting with
+                adjustable white screen borders.</span
+              >
+              <span class="pa__tech">JavaScript · GJS</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/joaoferrete/ContainerLoadingProblem-IC"
+              target="_blank"
+              rel="noopener"
+            >
+              <span class="pa__name">Container Loading Problem</span>
+              <span
+                class="pa__desc"
+                data-en="Scientific-initiation research in combinatorial optimization: heuristics for a high-complexity packing problem."
+                data-pt="Pesquisa de iniciação científica em otimização combinatória: heurísticas para um problema de empacotamento de alta complexidade."
+                >Scientific-initiation research in combinatorial optimization:
+                heuristics for a high-complexity packing problem.</span
+              >
+              <span class="pa__tech">C++</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/joaoferrete/MarathonAlg"
+              target="_blank"
+              rel="noopener"
+            >
+              <span class="pa__name">MarathonAlg</span>
+              <span
+                class="pa__desc"
+                data-en="A curated library of algorithms and data structures for competitive programming contests."
+                data-pt="Biblioteca curada de algoritmos e estruturas de dados para maratonas de programação."
+                >A curated library of algorithms and data structures for
+                competitive programming contests.</span
+              >
+              <span class="pa__tech">C++</span>
+            </a>
+          </li>
+        </ul>
 
         <a
           class="more-link reveal"

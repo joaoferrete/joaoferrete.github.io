@@ -5,6 +5,9 @@
    3. Active-section nav highlighting
    4. Count-up stats in the About section
    5. Hero graph signature (pathfinding-style traversal)
+   6. Scroll reveal animations
+   7. Project case accordions
+   8. Copy email
    ============================================================ */
 
 (function () {
@@ -24,7 +27,7 @@
     var saved = null;
     try {
       saved = localStorage.getItem(STORAGE_KEY);
-    } catch (e) { }
+    } catch (e) {}
     if (saved === "pt" || saved === "en") return saved;
     var nav = (navigator.language || "en").toLowerCase();
     return nav.indexOf("pt") === 0 ? "pt" : "en";
@@ -68,7 +71,7 @@
 
     try {
       localStorage.setItem(STORAGE_KEY, lang);
-    } catch (e) { }
+    } catch (e) {}
   }
 
   var currentLang = detectLang();
@@ -151,11 +154,11 @@
         var m = el.textContent.trim().match(/^(\D*)(\d+)(\D*)$/);
         return m
           ? {
-            el: el,
-            prefix: m[1],
-            target: parseInt(m[2], 10),
-            suffix: m[3],
-          }
+              el: el,
+              prefix: m[1],
+              target: parseInt(m[2], 10),
+              suffix: m[3],
+            }
           : null;
       })
       .filter(Boolean);
@@ -468,7 +471,7 @@
       window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduced || !("IntersectionObserver" in window)) {
       // If no observer or reduced motion, show everything immediately
-      document.querySelectorAll(".reveal").forEach(function(el) {
+      document.querySelectorAll(".reveal").forEach(function (el) {
         el.classList.add("is-visible");
       });
       return;
@@ -483,7 +486,7 @@
           }
         });
       },
-      { rootMargin: "0px 0px -50px 0px", threshold: 0.1 }
+      { rootMargin: "0px 0px -50px 0px", threshold: 0.1 },
     );
 
     document.querySelectorAll(".reveal").forEach(function (el) {
@@ -491,7 +494,27 @@
     });
   })();
 
-  /* ---------- 7. COPY EMAIL ---------- */
+  /* ---------- 7. PROJECT CASE ACCORDIONS ---------- */
+  (function () {
+    var toggles = Array.prototype.slice.call(
+      document.querySelectorAll(".card__toggle"),
+    );
+
+    toggles.forEach(function (btn) {
+      var card = btn.closest(".card");
+      var panel = document.getElementById(
+        btn.getAttribute("aria-controls") || "",
+      );
+      if (!card || !panel) return;
+
+      btn.addEventListener("click", function () {
+        var open = card.classList.toggle("is-open");
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+    });
+  })();
+
+  /* ---------- 8. COPY EMAIL ---------- */
   var copyBtn = document.getElementById("copyBtn");
   var emailText = document.getElementById("emailText");
   if (copyBtn && emailText) {
@@ -510,4 +533,3 @@
     });
   }
 })();
-
