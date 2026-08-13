@@ -449,13 +449,15 @@ a {
   color: var(--text);
 }
 
+/* The stats live in the LEFT column, under the title: the lead column would
+   otherwise run out of content halfway down and leave a hole beside the body. */
 .about__facts {
   display: flex;
   flex-wrap: wrap;
   gap: 28px;
   list-style: none;
-  padding: 24px 0 0;
-  margin: 8px 0 0;
+  padding: 28px 0 0;
+  margin: 32px 0 0;
   border-top: 1px solid var(--line);
 }
 .about__facts li {
@@ -478,21 +480,19 @@ a {
 }
 
 /* ---------- SKILLS ---------- */
+/* No glass card here on purpose: the card is the visual language of a PROJECT.
+   Skills sat in an identical box right above Projects, so the page never
+   changed rhythm. align-items:start also stops the short groups (Frontend) from
+   being stretched to the height of their tallest neighbour. */
 .skills {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+  align-items: start;
+  gap: 28px 32px;
 }
 .skill-group {
-  flex: 1 1 300px;
-  max-width: 100%;
-  background: rgba(22, 29, 33, 0.65);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 22px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
 }
 .skill-group h3 {
   font-family: var(--font-mono);
@@ -521,9 +521,13 @@ a {
 }
 
 /* ---------- PROJECTS ---------- */
+/* min() so the track can shrink below 290px: on a 320px phone the content box
+   is 280px, and a hard 290px minimum overflowed into body's overflow-x:hidden,
+   silently clipping the cards. */
 .projects {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(290px, 100%), 1fr));
+  align-items: start;
   gap: 20px;
 }
 .card {
@@ -622,6 +626,155 @@ a {
   border: 1px solid var(--teal-dim);
   border-radius: 6px;
   padding: 3px 8px;
+}
+
+/* ---------- FEATURED CARD + CASE ACCORDION ---------- */
+
+/* The featured card is an <article>, not an <a>: it holds a <button>, and a
+   button inside an anchor is invalid HTML and swallows the click. */
+.card--featured .card__head h3 a {
+  text-decoration: none;
+  color: var(--text);
+  transition: color 0.2s ease;
+}
+.card--featured .card__head h3 a:hover {
+  color: var(--teal);
+}
+.card--featured:hover {
+  transform: none; /* it can grow on open; lifting it too reads as a glitch */
+}
+
+.card__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  margin-top: 18px;
+  padding: 10px 0 0;
+  background: none;
+  border: none;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.card__toggle:hover {
+  color: var(--teal);
+}
+.card__toggle i {
+  font-size: 11px;
+  transition: transform 0.3s ease;
+}
+.card.is-open .card__toggle {
+  color: var(--teal);
+}
+.card.is-open .card__toggle i {
+  transform: rotate(180deg);
+}
+
+/* 0fr -> 1fr animates height without measuring it in JS. visibility keeps the
+   collapsed panel out of the tab order and the accessibility tree. */
+.card__case {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    grid-template-rows 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    opacity 0.25s ease,
+    visibility 0.35s;
+}
+.card.is-open .card__case {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  visibility: visible;
+}
+.card__case-inner {
+  overflow: hidden;
+  min-height: 0;
+}
+.card__case img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 18px 0 4px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.card__case h4 {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin: 18px 0 6px;
+}
+.card__case p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ---------- SECONDARY PROJECTS ---------- */
+.projects__aside-label {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 48px 0 4px;
+}
+.projects-aside {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.projects-aside li {
+  border-bottom: 1px solid var(--line);
+}
+.projects-aside a {
+  display: grid;
+  grid-template-columns: minmax(160px, auto) 1fr auto;
+  align-items: baseline;
+  gap: 4px 20px;
+  padding: 16px 0;
+  text-decoration: none;
+  color: var(--text);
+  transition:
+    color 0.2s ease,
+    padding-left 0.2s ease;
+}
+.projects-aside a:hover {
+  color: var(--teal);
+  padding-left: 10px;
+}
+.pa__name {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+}
+.pa__desc {
+  color: var(--muted);
+  font-size: 14px;
+}
+.pa__tech {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--teal-dim);
+  white-space: nowrap;
+}
+@media (max-width: 640px) {
+  .projects-aside a {
+    grid-template-columns: 1fr;
+  }
 }
 
 .more-link {
@@ -862,6 +1015,8 @@ a {
   transform: translateY(0);
 }
 
+/* Staggered by position within the grid rather than a fixed list, so adding or
+   removing a card never leaves the new one without a delay. */
 .projects .card:nth-child(1) {
   transition-delay: 0.05s;
 }
@@ -871,14 +1026,8 @@ a {
 .projects .card:nth-child(3) {
   transition-delay: 0.25s;
 }
-.projects .card:nth-child(4) {
+.projects .card:nth-child(n + 4) {
   transition-delay: 0.35s;
-}
-.projects .card:nth-child(5) {
-  transition-delay: 0.45s;
-}
-.projects .card:nth-child(6) {
-  transition-delay: 0.55s;
 }
 
 /* Timeline staggered delay */
@@ -970,8 +1119,7 @@ a {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
 }
-.theme-glass .card,
-.theme-glass .skill-group {
+.theme-glass .card {
   background: rgba(22, 29, 33, 0.6);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -987,6 +1135,9 @@ a {
 .theme-glass .skill-group li {
   background: rgba(255, 255, 255, 0.03);
   border-color: rgba(255, 255, 255, 0.08);
+}
+.theme-glass .projects-aside li {
+  border-color: rgba(255, 255, 255, 0.06);
 }
 .theme-glass .mobile-nav {
   background: rgba(22, 29, 33, 0.85);
