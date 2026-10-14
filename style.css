@@ -604,17 +604,34 @@ a {
   color: var(--teal);
   white-space: nowrap;
 }
-.card__beta {
+.card__play {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   font-family: var(--font-mono);
   font-size: 12px;
-  color: var(--amber);
+  color: var(--teal);
+  text-decoration: none;
   white-space: nowrap;
 }
-.card__beta i {
-  font-size: 7px;
+.card__play:hover {
+  text-decoration: underline;
+}
+/* The label that publishes the apps: a quiet byline under the title, not a
+   second headline. */
+.card .card__publisher {
+  flex: 0 0 auto;
+  margin: -4px 0 12px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted);
+}
+.card__publisher a {
+  color: var(--teal);
+  text-decoration: none;
+}
+.card__publisher a:hover {
+  text-decoration: underline;
 }
 .card__live i {
   font-size: 7px;
