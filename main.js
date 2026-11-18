@@ -167,14 +167,14 @@
       s.el.textContent = s.prefix + value + s.suffix;
     }
 
-    function runCount() {
+    function runCount(group) {
       var DURATION = 1300;
       var start = null;
       function step(ts) {
         if (start === null) start = ts;
         var p = Math.min((ts - start) / DURATION, 1);
         var e = 1 - Math.pow(1 - p, 3); // easeOutCubic
-        stats.forEach(function (s) {
+        group.forEach(function (s) {
           render(s, Math.round(s.target * e));
         });
         if (p < 1) requestAnimationFrame(step);
@@ -189,18 +189,24 @@
     stats.forEach(function (s) {
       render(s, 0);
     });
-    var target = statEls[0].closest(".about__facts") || statEls[0];
+    // Each stats block (About, GoWorks) counts up when it scrolls into view.
     var statObserver = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
           if (!entry.isIntersecting) return;
-          runCount();
-          statObserver.disconnect();
+          runCount(
+            stats.filter(function (s) {
+              return entry.target.contains(s.el);
+            }),
+          );
+          statObserver.unobserve(entry.target);
         });
       },
       { threshold: 0.4 },
     );
-    statObserver.observe(target);
+    document.querySelectorAll(".about__facts").forEach(function (list) {
+      statObserver.observe(list);
+    });
   })();
 
   /* ---------- 5. HERO GRAPH SIGNATURE ---------- */
