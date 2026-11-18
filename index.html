@@ -274,7 +274,7 @@
                 >
               </li>
               <li>
-                <span class="num">7</span
+                <span class="num">9</span
                 ><span
                   data-en="projects built from scratch"
                   data-pt="projetos construídos do zero"
@@ -298,13 +298,14 @@
             </p>
             <p
               class="reveal"
-              data-en="My foundation is <strong>Computer Science at UFES</strong>, with a strong background in algorithms &mdash; <strong>competitive programming (SBC marathons)</strong> and operations research. I've been a teaching assistant for Data Structures and Functional Programming, and I led VI ENCOMP, the largest computing event in northern Espírito Santo."
-              data-pt="Minha base é a <strong>Ciência da Computação na UFES</strong>, com forte background em algoritmos &mdash; <strong>programação competitiva (Maratonas da SBC)</strong> e pesquisa operacional. Fui monitor de Estrutura de Dados e Programação Funcional, e coordenei o VI ENCOMP, o maior evento de computação do norte capixaba."
+              data-en="My foundation is <strong>Computer Science at UFES</strong>, with a strong background in algorithms &mdash; <strong>competitive programming (SBC marathons)</strong> and operations research, the subject of my <a href='https://github.com/joaoferrete/HFVRP' target='_blank' rel='noopener'>thesis on vehicle routing</a>. I've been a teaching assistant for Data Structures and Functional Programming, and I led VI ENCOMP, the largest computing event in northern Espírito Santo."
+              data-pt="Minha base é a <strong>Ciência da Computação na UFES</strong>, com forte background em algoritmos &mdash; <strong>programação competitiva (Maratonas da SBC)</strong> e pesquisa operacional, tema do meu <a href='https://github.com/joaoferrete/HFVRP' target='_blank' rel='noopener'>TCC sobre roteamento de veículos</a>. Fui monitor de Estrutura de Dados e Programação Funcional, e coordenei o VI ENCOMP, o maior evento de computação do norte capixaba."
             >
               My foundation is <strong>Computer Science at UFES</strong>, with a
               strong background in algorithms &mdash;
               <strong>competitive programming (SBC marathons)</strong> and
-              operations research. I've been a teaching assistant for Data
+              operations research, the subject of my
+              <a href="https://github.com/joaoferrete/HFVRP" target="_blank" rel="noopener">thesis on vehicle routing</a>. I've been a teaching assistant for Data
               Structures and Functional Programming, and I led VI ENCOMP, the
               largest computing event in northern Espírito Santo.
             </p>
@@ -686,6 +687,131 @@
               </div>
             </div>
           </article>
+          <!-- ---------- Copyveil ---------- -->
+          <article class="card card--featured reveal">
+            <div class="card__head">
+              <h3>
+                <a
+                  href="https://github.com/joaoferrete/copyveil"
+                  target="_blank"
+                  rel="noopener"
+                  >Copyveil</a
+                >
+              </h3>
+              <span class="card__live"
+                ><i class="fa-solid fa-circle"></i>
+                <span data-en="Open source · v0.1" data-pt="Open source · v0.1"
+                  >Open source · v0.1</span
+                ></span
+              >
+            </div>
+            <p class="card__publisher">
+              <span data-en="Published by" data-pt="Publicado pela"
+                >Published by</span
+              >
+              <a href="https://goworks.me" target="_blank" rel="noopener"
+                >GoWorks</a
+              >
+            </p>
+            <p
+              data-en="A clipboard history for Linux that remembers what you copy and forgets your secrets. Tokens and passwords are masked, kept in memory only and erased after a short time; everything else is encrypted on disk. Rust, GTK 4 and a GNOME Shell extension, under GPL-3.0."
+              data-pt="Histórico da área de transferência para Linux que lembra o que você copia e esquece seus segredos. Tokens e senhas ficam mascarados, só na memória, e são apagados depois de pouco tempo; o resto é cifrado no disco. Rust, GTK 4 e uma extensão do GNOME Shell, sob GPL-3.0."
+            >
+              A clipboard history for Linux that remembers what you copy and
+              forgets your secrets. Tokens and passwords are masked, kept in
+              memory only and erased after a short time; everything else is
+              encrypted on disk.
+            </p>
+            <div class="card__tags">
+              <span>Rust</span><span>GTK 4</span><span>libadwaita</span
+              ><span>D-Bus</span><span>Wayland</span>
+            </div>
+            <button
+              class="card__toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="case-copyveil"
+            >
+              <span data-en="The engineering" data-pt="A engenharia"
+                >The engineering</span
+              >
+              <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="card__case" id="case-copyveil">
+              <div class="card__case-inner">
+                <img
+                  src="assets/projects/copyveil.jpg"
+                  alt="The Copyveil popup: a secret behind a solid mask, a suspected GitHub token behind a hatched mask, and plain items as text"
+                  loading="lazy"
+                  width="602"
+                  height="600"
+                />
+                <h4 data-en="The problem" data-pt="O problema">The problem</h4>
+                <p
+                  data-en="A clipboard manager keeps everything you copy, in plain text, for as long as it can. For someone who copies API keys, tokens and passwords all day, that turns a stolen laptop, a leaked backup of the home folder or a screen share into a list of credentials."
+                  data-pt="Um gerenciador de área de transferência guarda tudo o que você copia, em texto puro, pelo maior tempo possível. Para quem copia chave de API, token e senha o dia inteiro, isso transforma um notebook roubado, um backup vazado da pasta pessoal ou um compartilhamento de tela numa lista de credenciais."
+                >
+                  A clipboard manager keeps everything you copy, in plain text,
+                  for as long as it can.
+                </p>
+                <h4 data-en="The decision" data-pt="A decisão">The decision</h4>
+                <p
+                  data-en="Every item gets a sensitivity. A Secret, marked by a password manager, and a Suspected item, which looks like a token (GitHub, AWS, AI providers, JWT, PEM, high entropy), never touch the disk: they are masked by shape, expire in 30 seconds and 15 minutes, and search never looks inside them. Plain items are encrypted one by one with XChaCha20-Poly1305, under a key held only in the keyring. GNOME won't let apps watch the clipboard, so a small Shell extension hands each copy to a desktop-agnostic daemon and stores nothing itself."
+                  data-pt="Todo item ganha uma sensibilidade. O Secret, marcado por um gerenciador de senhas, e o Suspected, que parece um token (GitHub, AWS, provedores de IA, JWT, PEM, alta entropia), nunca tocam o disco: são mascarados pela forma, expiram em 30 segundos e 15 minutos, e a busca nunca olha dentro deles. Os itens comuns são cifrados um a um com XChaCha20-Poly1305, com a chave guardada só no chaveiro. O GNOME não deixa apps observarem a área de transferência, então uma extensão pequena do Shell entrega cada cópia a um daemon independente de desktop e não guarda nada."
+                >
+                  Every item gets a sensitivity, and secrets never touch the
+                  disk.
+                </p>
+                <h4 data-en="The consequence" data-pt="A consequência">
+                  The consequence
+                </h4>
+                <p
+                  data-en="The guarantees live in code and CI, not in the README: item content uses types that cannot be printed or logged, a leak test on every PR checks that no secret reaches anything written to disk, unsafe is forbidden, and the daemon makes itself non-dumpable. The threat model says plainly what it can't protect against. 0.1 runs on GNOME; KDE Plasma, COSMIC and wlroots come in 0.2."
+                  data-pt="As garantias moram no código e na CI, não no README: o conteúdo dos itens usa tipos que não podem ser impressos nem logados, um teste de vazamento em todo PR confere que nenhum segredo chega ao que é gravado em disco, unsafe é proibido e o daemon se torna não-dumpable. O modelo de ameaça diz com todas as letras do que ele não protege. A 0.1 roda no GNOME; KDE Plasma, COSMIC e wlroots chegam na 0.2."
+                >
+                  The guarantees live in code and CI, not in the README.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- ---------- Tabli ---------- -->
+          <article class="card card--featured reveal">
+            <div class="card__head">
+              <h3>
+                <a href="https://tabli.goworks.me" target="_blank" rel="noopener"
+                  >Tabli</a
+                >
+              </h3>
+              <span class="card__dev"
+                ><i class="fa-regular fa-circle"></i>
+                <span data-en="In development" data-pt="Em desenvolvimento"
+                  >In development</span
+                ></span
+              >
+            </div>
+            <p class="card__publisher">
+              <span data-en="Published by" data-pt="Publicado pela"
+                >Published by</span
+              >
+              <a href="https://goworks.me" target="_blank" rel="noopener"
+                >GoWorks</a
+              >
+            </p>
+            <p
+              data-en="Split a group's expenses — a night out, a trip, a weekend — and settle up at the end, with Pix ready. No account and local-first, with end-to-end encrypted sync through a relay that only ever sees ciphertext. One pure Kotlin domain, with its own CRDT, runs on Android, on iOS and in the browser for guests."
+              data-pt="Divide as despesas de um grupo — um rolê, uma viagem, um fim de semana — e acerta no fim, com o Pix pronto. Sem conta e local-first, com sync cifrado de ponta a ponta por um relay que só enxerga dado cifrado. Um domínio em Kotlin puro, com CRDT próprio, roda no Android, no iOS e no navegador de quem é convidado."
+            >
+              Split a group's expenses — a night out, a trip, a weekend — and
+              settle up at the end, with Pix ready. No account and local-first,
+              with end-to-end encrypted sync.
+            </p>
+            <div class="card__tags">
+              <span>Kotlin Multiplatform</span><span>Compose</span
+              ><span>SQLDelight</span><span>CRDT</span
+              ><span>Cloudflare Workers</span>
+            </div>
+          </article>
         </div>
 
         <h3
@@ -728,6 +854,24 @@
                 heuristics for a high-complexity packing problem.</span
               >
               <span class="pa__tech">C++</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/joaoferrete/HFVRP"
+              target="_blank"
+              rel="noopener"
+            >
+              <span class="pa__name" data-en="Thesis: HFVRP with delivery priority" data-pt="TCC: HFVRP com prioridade de entrega">Thesis: HFVRP with delivery priority</span>
+              <span
+                class="pa__desc"
+                data-en="Vehicle routing with a heterogeneous fleet and delivery priority, solved four ways: an exact MILP model, Clarke-Wright, tabu search and a genetic algorithm. Code, instances and results."
+                data-pt="Roteamento de veículos com frota heterogênea e prioridade de entrega, resolvido de quatro jeitos: modelo exato de PLIM, Clarke-Wright, busca tabu e algoritmo genético. Código, instâncias e resultados."
+                >Vehicle routing with a heterogeneous fleet and delivery
+                priority, solved four ways: an exact MILP model, Clarke-Wright,
+                tabu search and a genetic algorithm.</span
+              >
+              <span class="pa__tech">C++ · Python</span>
             </a>
           </li>
           <li>
