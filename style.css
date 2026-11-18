@@ -479,6 +479,15 @@ a {
   margin-top: 6px;
 }
 
+/* ---------- GOWORKS ---------- */
+/* Reuses the About grid; only the CTA row is new. */
+.goworks__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
 /* ---------- SKILLS ---------- */
 /* No glass card here on purpose: the card is the visual language of a PROJECT.
    Skills sat in an identical box right above Projects, so the page never
